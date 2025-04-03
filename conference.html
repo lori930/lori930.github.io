@@ -9,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     
     <style>
+        /* General Body Styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #f4f6f8;
             margin: 0;
             padding: 0;
             color: #333;
@@ -37,7 +38,7 @@
 
         .link p {
             margin: 0;
-            color: #007BFF;
+            color: #1e90ff;
         }
 
         .link a {
@@ -80,6 +81,7 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #333;
         }
 
         .conference:hover {
@@ -95,7 +97,7 @@
         }
 
         .conference .deadline {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 500;
             margin-top: 10px;
         }
@@ -106,29 +108,50 @@
             color: #777;
         }
 
+        /* Color adjustments for Past Conferences */
         .conference .past {
-            color: red;
+            color: #ff6347; /* Soft red color for past conferences */
             font-weight: bold;
         }
 
-        .conference a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: 500;
-        }
-
+        /* Past Message */
         .past-message {
             text-align: center;
             font-size: 1.2rem;
             margin-top: 20px;
-            color: #FF6347;
+            color: #ffa07a; /* Lighter color for reminder text */
         }
 
+        /* Separation Line */
         .separation {
             grid-column: span 2;
             height: 2px;
             background-color: #ddd;
             margin-top: 30px;
+        }
+
+        .conference a {
+            text-decoration: none;
+            color: #1e90ff;
+            font-weight: 500;
+        }
+
+        /* Countdown Digits Styling */
+        .countdown {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            display: flex;
+            gap: 10px;
+        }
+
+        .countdown span {
+            background-color: #e9ecef;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            min-width: 50px;
+            text-align: center;
         }
 
         /* Responsive Design */
@@ -256,7 +279,7 @@
                 const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
                 const seconds = Math.floor((timeRemaining / 1000) % 60);
 
-                const countdownText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+                const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
                 const conferenceElement = document.createElement('div');
                 conferenceElement.className = 'conference';
@@ -266,7 +289,7 @@
                 
                 conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
                     ${pastLabel}
-                    <p class="deadline">Deadline: ${countdownText}</p>
+                    <p class="deadline">Remaining: <span class="countdown">${countdownText}</span></p>
                     <p class="categories">Categories: ${conference.categories.join(', ')}</p>`;
                 conferenceList.appendChild(conferenceElement);
             });
