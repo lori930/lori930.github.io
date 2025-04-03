@@ -8,28 +8,55 @@
         body { font-family: Arial, sans-serif; }
         .conference { margin: 20px; padding: 10px; border: 1px solid #ccc; }
         .deadline { font-weight: bold; }
+        .note { font-style: italic; color: #555; margin-top: 20px; }
+        .link { margin-top: 20px; }
     </style>
 </head>
 <body>
     <h1>Conference Deadline Countdown</h1>
+    
+    <!-- Reminder and Link Section -->
+    <div class="note">
+        <p>Even if a conference has passed, you can check the workshop times for valuable sessions!</p>
+    </div>
+    <div class="link">
+        <p>For more conference deadlines, visit <a href="http://aideadlines.org/?sub=RO" target="_blank">AI Deadlines</a>.</p>
+    </div>
+    
+    <!-- Filter Dropdown -->
+    <label for="category-filter">Filter by Category:</label>
+    <select id="category-filter">
+        <option value="">All</option>
+        <option value="AI">AI</option>
+        <option value="Robotics">Robotics</option>
+        <option value="Healthcare">Healthcare</option>
+    </select>
+    
     <div id="conference-list"></div>
 
     <script>
         const conferences = [
-            { name: 'Conference A', deadline: '2025-05-01T00:00:00Z' },
-            { name: 'Conference B', deadline: '2025-06-15T00:00:00Z' },
-            { name: 'Conference C', deadline: '2025-07-10T00:00:00Z' }
+            { name: 'AI Conference', deadline: '2025-05-01T00:00:00Z', category: 'AI' },
+            { name: 'Robotics Conference', deadline: '2025-06-15T00:00:00Z', category: 'Robotics' },
+            { name: 'Healthcare Summit', deadline: '2025-07-10T00:00:00Z', category: 'Healthcare' }
         ];
 
+        document.getElementById('category-filter').addEventListener('change', updateCountdown);
+
         function updateCountdown() {
+            const selectedCategory = document.getElementById('category-filter').value;
             const now = new Date();
             const conferenceList = document.getElementById('conference-list');
             conferenceList.innerHTML = ''; // Clear the current list
 
-            conferences.forEach(conference => {
+            const filteredConferences = conferences.filter(conference => {
+                return selectedCategory === '' || conference.category === selectedCategory;
+            });
+
+            filteredConferences.forEach(conference => {
                 const deadline = new Date(conference.deadline);
                 const timeRemaining = deadline - now;
-                
+
                 if (timeRemaining <= 0) return; // Skip if the deadline has passed
 
                 const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -46,9 +73,8 @@
             });
         }
 
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initialize countdown immediately
+        // Initial countdown update
+        updateCountdown();
     </script>
 </body>
 </html>
