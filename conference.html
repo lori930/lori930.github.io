@@ -277,38 +277,23 @@
 
             // Display upcoming conferences
             filteredUpcomingConferences.forEach(conference => {
-                const deadline = new Date(conference.deadline);
-                const timeRemaining = deadline - now;
-
-                const isPast = timeRemaining <= 0;
-
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
-                const seconds = Math.floor((timeRemaining / 1000) % 60);
-
-                const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
                 const conferenceElement = document.createElement('div');
                 conferenceElement.className = 'conference';
+
+                const countdownContainer = document.createElement('div');
+                countdownContainer.className = 'countdown';
                 
-                // Mark past conferences with a special label
-                const pastLabel = isPast ? '<p class="past">Past</p>' : '';
-                
+                updateCountdownRealTime(conferenceElement, conference, countdownContainer);
+
                 conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
-                    ${pastLabel}
-                    <p class="deadline">Remaining: <span class="countdown">${countdownText}</span></p>
                     <p class="categories">Categories: ${conference.categories.join(', ')}</p>`;
+
+                conferenceElement.appendChild(countdownContainer);
                 conferenceList.appendChild(conferenceElement);
             });
 
-            // Add a separation line before displaying past conferences
+            // Reminder for co-located workshops before displaying past conferences
             if (filteredPastConferences.length > 0) {
-                const separationElement = document.createElement('div');
-                separationElement.className = 'separation';
-                conferenceList.appendChild(separationElement);
-
-                // Reminder for co-located workshops
                 const pastMessage = document.createElement('div');
                 pastMessage.className = 'past-message';
                 pastMessage.innerText = 'Please check the co-located workshops for past conferences!';
@@ -317,21 +302,34 @@
 
             // Display past conferences
             filteredPastConferences.forEach(conference => {
-                const deadline = new Date(conference.deadline);
-                const pastDays = conference.pastDays;
-
                 const conferenceElement = document.createElement('div');
                 conferenceElement.className = 'conference';
-
-                const isPastYearUpdate = pastDays >= 280;
-                const updateMessage = isPastYearUpdate ? '<p class="past">The date for the coming year to be updated</p>' : '';
-
                 conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
-                    ${updateMessage}
-                    <p class="past">Past conference - ${pastDays} days ago</p>
+                    <p class="past">Past conference - ${conference.pastDays} days ago</p>
                     <p class="categories">Categories: ${conference.categories.join(', ')}</p>`;
                 conferenceList.appendChild(conferenceElement);
             });
+        }
+
+        function updateCountdownRealTime(conferenceElement, conference, countdownContainer) {
+            const deadline = new Date(conference.deadline);
+
+            function update() {
+                const now = new Date();
+                const timeRemaining = deadline - now;
+
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+                const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+                const countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+                countdownContainer.innerHTML = countdownText;
+            }
+
+            update();
+            setInterval(update, 1000); // Update every second
         }
 
         // Initial countdown update
