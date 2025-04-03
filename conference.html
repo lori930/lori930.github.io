@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Deadline Countdown</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .conference { margin: 20px; padding: 10px; border: 1px solid #ccc; }
+        .deadline { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Conference Deadline Countdown</h1>
+    <div id="conference-list"></div>
+
+    <script>
+        const conferences = [
+            { name: 'Conference A', deadline: '2025-05-01T00:00:00Z' },
+            { name: 'Conference B', deadline: '2025-06-15T00:00:00Z' },
+            { name: 'Conference C', deadline: '2025-07-10T00:00:00Z' }
+        ];
+
+        function updateCountdown() {
+            const now = new Date();
+            const conferenceList = document.getElementById('conference-list');
+            conferenceList.innerHTML = ''; // Clear the current list
+
+            conferences.forEach(conference => {
+                const deadline = new Date(conference.deadline);
+                const timeRemaining = deadline - now;
+                
+                if (timeRemaining <= 0) return; // Skip if the deadline has passed
+
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((timeRemaining / 1000 / 60) % 60);
+                const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+                const countdownText = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+
+                const conferenceElement = document.createElement('div');
+                conferenceElement.className = 'conference';
+                conferenceElement.innerHTML = `<h2>${conference.name}</h2><p class="deadline">Deadline: ${countdownText}</p>`;
+                conferenceList.appendChild(conferenceElement);
+            });
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initialize countdown immediately
+    </script>
+</body>
+</html>
