@@ -117,6 +117,20 @@
             font-weight: 500;
         }
 
+        .past-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #FF6347;
+        }
+
+        .separation {
+            grid-column: span 2;
+            height: 2px;
+            background-color: #ddd;
+            margin-top: 30px;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .conference-list {
@@ -164,8 +178,8 @@
         { name: 'SEC', link: 'https://acm-ieee-sec.org/2025/', deadline: '2025-06-20T00:00:00Z', categories: ['System'] },
         { name: 'ICRA', link: 'https://2025.ieee-icra.org/', deadline: '2024-09-15T00:00:00Z', categories: ['Robotics'] },
         { name: 'IROS', link: 'http://www.iros25.org/', deadline: '2025-03-02T00:00:00Z', categories: ['Robotics'] },
-        { name: 'MobiCom-Summer', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2024-09-05T00:00:00Z', categories: ['System'] },
-        { name: 'MobiCom-Winter', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2025-03-18T00:00:00Z', categories: ['System'] },
+        { name: 'MobiCom (1st Cycle)', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2024-09-05T00:00:00Z', categories: ['System'] },
+        { name: 'MobiCom (2nd Cycle)', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2025-03-18T00:00:00Z', categories: ['System'] },
         { name: 'CHASE', link: 'https://conferences.computer.org/chase2025/', deadline: '2025-02-16T00:00:00Z', categories: ['Health'] },
         { name: 'MICCAI', link: 'https://miccai.org/index.php/events/upcoming-conferences/', deadline: '2025-02-27T00:00:00Z', categories: ['Health'] },
         { name: 'NIPS', link: 'https://neurips.cc/', deadline: '2025-05-15T00:00:00Z', categories: ['AI'] },
@@ -189,12 +203,12 @@
         { name: 'ACM MM', link: 'https://acmmm2025.org/', deadline: '2025-04-11T00:00:00Z', categories: ['AI'] },
         { name: 'NAACL', link: 'https://2025.naacl.org/', deadline: '2024-10-15T00:00:00Z', categories: ['AI'] },
         { name: 'WACV (1st Cycle)', link: 'https://wacv2025.thecvf.com/', deadline: '2024-07-15T00:00:00Z', categories: ['AI'] },
-        { name: 'WACV (2ns Cycle)', link: 'https://wacv2025.thecvf.com/', deadline: '2024-09-09T00:00:00Z', categories: ['AI'] },
+        { name: 'WACV (2nd Cycle)', link: 'https://wacv2025.thecvf.com/', deadline: '2024-09-09T00:00:00Z', categories: ['AI'] },
         { name: 'ACML', link: 'https://www.acml-conf.org/2025/index.htm', deadline: '2024-07-03T00:00:00Z', categories: ['AI'] },
         { name: 'ACL', link: 'https://2025.aclweb.org/', deadline: '2025-02-15T00:00:00Z', categories: ['AI'] },
         { name: 'IJCNN', link: 'https://2025.ijcnn.org/', deadline: '2025-01-30T00:00:00Z', categories: ['AI'] },
-        { name: 'KDD (1st Cycle)', link: 'https://kdd2025.kdd.org/', deadline: '2024-08-08T00:00:00Z', categories: ['AI'] },
-        { name: 'KDD (2nd Cycle)', link: 'https://kdd2025.kdd.org/', deadline: '2024-10-01T00:00:00Z', categories: ['AI'] },
+        { name: 'KDD (1st Cycle)', link: 'https://kdd2025.kdd.org/', deadline: '2024-08-08T00:00:00Z', categories: ['AI, System'] },
+        { name: 'KDD (2nd Cycle)', link: 'https://kdd2025.kdd.org/', deadline: '2024-10-01T00:00:00Z', categories: ['AI, System'] },
         ];
 
         document.getElementById('category-filter').addEventListener('change', updateCountdown);
@@ -230,16 +244,8 @@
             // Sort past conferences by past days in ascending order
             pastConferences.sort((a, b) => a.pastDays - b.pastDays);
 
-            // Combine both lists
-            const sortedConferences = [...upcomingConferences, ...pastConferences];
-
-            // Filter by category
-            const filteredConferences = sortedConferences.filter(conference => {
-                return selectedCategory === '' || conference.categories.includes(selectedCategory);
-            });
-
-            // Display sorted and filtered conferences
-            filteredConferences.forEach(conference => {
+            // Display upcoming conferences
+            upcomingConferences.forEach(conference => {
                 const deadline = new Date(conference.deadline);
                 const timeRemaining = deadline - now;
 
@@ -254,13 +260,44 @@
 
                 const conferenceElement = document.createElement('div');
                 conferenceElement.className = 'conference';
-
+                
                 // Mark past conferences with a special label
                 const pastLabel = isPast ? '<p class="past">Past</p>' : '';
                 
                 conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
                     ${pastLabel}
                     <p class="deadline">Deadline: ${countdownText}</p>
+                    <p class="categories">Categories: ${conference.categories.join(', ')}</p>`;
+                conferenceList.appendChild(conferenceElement);
+            });
+
+            // Add a separation line before displaying past conferences
+            if (pastConferences.length > 0) {
+                const separationElement = document.createElement('div');
+                separationElement.className = 'separation';
+                conferenceList.appendChild(separationElement);
+
+                // Reminder for co-located workshops
+                const pastMessage = document.createElement('div');
+                pastMessage.className = 'past-message';
+                pastMessage.innerText = 'Please check the co-located workshops for past conferences!';
+                conferenceList.appendChild(pastMessage);
+            }
+
+            // Display past conferences
+            pastConferences.forEach(conference => {
+                const deadline = new Date(conference.deadline);
+                const pastDays = conference.pastDays;
+
+                const conferenceElement = document.createElement('div');
+                conferenceElement.className = 'conference';
+
+                const isPastYearUpdate = pastDays >= 280;
+                const updateMessage = isPastYearUpdate ? '<p class="past">The date for the coming year to be updated</p>' : '';
+
+                conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
+                    ${updateMessage}
+                    <p class="past">Past conference - ${pastDays} days ago</p>
                     <p class="categories">Categories: ${conference.categories.join(', ')}</p>`;
                 conferenceList.appendChild(conferenceElement);
             });
