@@ -10,6 +10,7 @@
         .deadline { font-weight: bold; }
         .note { font-style: italic; color: #555; margin-top: 20px; }
         .link { margin-top: 20px; }
+        .past { color: red; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -29,16 +30,35 @@
         <option value="">All</option>
         <option value="AI">AI</option>
         <option value="Robotics">Robotics</option>
-        <option value="Healthcare">Healthcare</option>
+        <option value="Health">Health</option>
+        <option value="System">System</option>
+        <option value="Security">Security</option>
+        <option value="Sports">Sports</option>
     </select>
     
     <div id="conference-list"></div>
 
     <script>
         const conferences = [
-            { name: 'AI Conference', deadline: '2025-05-01T00:00:00Z', category: 'AI' },
-            { name: 'Robotics Conference', deadline: '2025-06-15T00:00:00Z', category: 'Robotics' },
-            { name: 'Healthcare Summit', deadline: '2025-07-10T00:00:00Z', category: 'Healthcare' }
+            { name: 'The Web Conf', link: 'https://www2025.thewebconf.org/', deadline: '2024-10-14T00:00:00Z', categories: ['System'] },
+            { name: 'ICDCS', link: 'https://icdcs2025.icdcs.org/', deadline: '2024-12-18T00:00:00Z', categories: ['System'] },
+            { name: 'SEC', link: 'https://acm-ieee-sec.org/2025/', deadline: '2025-06-20T00:00:00Z', categories: ['System'] },
+            { name: 'ICRA', link: 'https://2025.ieee-icra.org/', deadline: '2024-09-15T00:00:00Z', categories: ['Robotics'] },
+            { name: 'IROS', link: 'http://www.iros25.org/', deadline: '2025-03-02T00:00:00Z', categories: ['Robotics'] },
+            { name: 'MobiCom-Summer', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2024-09-05T00:00:00Z', categories: ['System'] },
+            { name: 'MobiCom-Winter', link: 'https://www.sigmobile.org/mobicom/2025/', deadline: '2025-03-18T00:00:00Z', categories: ['System'] },
+            { name: 'CHASE', link: 'https://conferences.computer.org/chase2025/', deadline: '2025-02-16T00:00:00Z', categories: ['Health'] },
+            { name: 'MICCAI', link: 'https://miccai.org/index.php/events/upcoming-conferences/', deadline: '2025-02-27T00:00:00Z', categories: ['Health'] },
+            { name: 'NIPS', link: 'https://neurips.cc/', deadline: '2025-05-15T00:00:00Z', categories: ['AI'] },
+            { name: 'CVPR', link: 'https://cvpr.thecvf.com/', deadline: '2024-11-14T00:00:00Z', categories: ['AI'] },
+            { name: 'MLSys', link: 'https://mlsys.org/', deadline: '2024-10-31T00:00:00Z', categories: ['System'] },
+            { name: 'CoRL', link: 'https://www.corl.org/', deadline: '2025-04-30T00:00:00Z', categories: ['Robotics'] },
+            { name: 'AAAI', link: 'https://aaai.org/conference/aaai/aaai-25/', deadline: '2024-08-15T00:00:00Z', categories: ['AI'] },
+            { name: 'RSS', link: 'https://roboticsconference.org/', deadline: '2025-01-17T00:00:00Z', categories: ['Robotics'] },
+            { name: 'ICML', link: 'https://icml.cc/', deadline: '2025-01-30T00:00:00Z', categories: ['AI'] },
+            { name: 'IJCAI', link: '', deadline: '2025-07-10T00:00:00Z', categories: ['AI'] },
+            { name: 'VehicleSec', link: 'https://www.usenix.org/conference/vehiclesec25', deadline: '2025-03-06T00:00:00Z', categories: ['Security'] },
+            { name: 'CVsports', link: 'https://vap.aau.dk/cvsports/', deadline: '2025-03-11T00:00:00Z', categories: ['Sports'] }
         ];
 
         document.getElementById('category-filter').addEventListener('change', updateCountdown);
@@ -49,15 +69,22 @@
             const conferenceList = document.getElementById('conference-list');
             conferenceList.innerHTML = ''; // Clear the current list
 
+            // Filter conferences based on the selected category
             const filteredConferences = conferences.filter(conference => {
-                return selectedCategory === '' || conference.category === selectedCategory;
+                const matchesCategory = selectedCategory === '' || conference.categories.includes(selectedCategory);
+                return matchesCategory;
             });
 
+            // Sort conferences by deadline (ascending order)
+            filteredConferences.sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+            // Display sorted and filtered conferences
             filteredConferences.forEach(conference => {
                 const deadline = new Date(conference.deadline);
                 const timeRemaining = deadline - now;
 
-                if (timeRemaining <= 0) return; // Skip if the deadline has passed
+                // Check if the conference has passed
+                const isPast = timeRemaining <= 0;
 
                 const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
@@ -68,7 +95,14 @@
 
                 const conferenceElement = document.createElement('div');
                 conferenceElement.className = 'conference';
-                conferenceElement.innerHTML = `<h2>${conference.name}</h2><p class="deadline">Deadline: ${countdownText}</p>`;
+                
+                // Mark past conferences with a special label
+                const pastLabel = isPast ? '<p class="past">Past</p>' : '';
+                
+                conferenceElement.innerHTML = `<h2><a href="${conference.link}" target="_blank">${conference.name}</a></h2>
+                    ${pastLabel}
+                    <p class="deadline">Deadline: ${countdownText}</p>
+                    <p>Categories: ${conference.categories.join(', ')}</p>`;
                 conferenceList.appendChild(conferenceElement);
             });
         }
