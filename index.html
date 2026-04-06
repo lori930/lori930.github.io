@@ -8,8 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
-  /* ─── DATA: Edit all content here ──────────────────────────────── */
-
   /* ─── Reset & Base ──────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -443,333 +441,473 @@
 </head>
 <body>
 
-<!-- ═══ NAV ══════════════════════════════════════════════════════════ -->
 <nav>
-  <div class="nav-inner">
-    <a href="#hero" class="nav-name">Lanyu (Lori) Xu</a>
+  <div class="nav-inner" id="nav-inner">
+    <!-- populated by JS -->
+  </div>
+</nav>
+
+<main id="main-content">
+  <!-- populated by JS -->
+</main>
+
+<footer id="site-footer">
+  <!-- populated by JS -->
+</footer>
+
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+//
+//  SITE DATA
+//  ─────────
+//  This is the only section you need to edit to update your website.
+//
+//  • Add a news item   → add an object to SITE.news[]
+//  • Add a publication → add an object to the right group in SITE.publications[]
+//  • Add a student     → add an object to the right group in SITE.lab.students[]
+//  • Add a course      → add an object to SITE.teaching[]
+//  • Add an award      → add an object to SITE.awards[]
+//  • Add a service item→ add a string to the right column in SITE.service[]
+//
+// ═══════════════════════════════════════════════════════════════════════════
+
+const SITE = {
+
+  // ── Profile ─────────────────────────────────────────────────────────────
+  name:     "Lanyu (Lori) Xu",
+  nameHtml: "Lanyu<br>(Lori) Xu",   // line break for the large hero heading
+  title:    "Assistant Professor · Oakland University",
+  photo:    "https://lori930.github.io/images/headshot-LX-2025.jpg",
+  location: "📍 Engineering Center 546 · 115 Library Drive · Rochester, MI",
+
+  // HTML is allowed here for links
+  bio: `I design, analyze, and build efficient <a href="#lab">edge AI</a> systems —
+    where intelligent perception runs close to the data, on the hardware that matters.
+    My work spans vision transformer efficiency and edge-optimized inference, applied to
+    autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
+    <br><br>
+    Ph.D. in Computer Science, <a href="https://wayne.edu" target="_blank">Wayne State University</a>
+    (advised by <a href="https://www.weisongshi.org/" target="_blank">Dr. Weisong Shi</a>).
+    B.S. in Computer Science, <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>.`,
+
+  // Profile link buttons
+  links: [
+    { label: "✉ Email",        href: "mailto:lxu@oakland.edu" },
+    { label: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ", external: true },
+    { label: "LinkedIn",       href: "https://www.linkedin.com/in/lanyuxu/", external: true },
+    { label: "Book",           href: "https://edgecomputingbook.org", external: true },
+  ],
+
+
+  // ── News ────────────────────────────────────────────────────────────────
+  // Add newest items at the top. HTML is allowed in `text`.
+  news: [
+    {
+      date: "Apr 2026",
+      text: `We have two papers accepted at <strong>IEEE/ACM CHASE 2026</strong>. Congratulations to the team!`,
+    },
+    {
+      date: "Jan 2026",
+      text: `Paper <em>"Hilbert-Guided Sparse Local Attention"</em> accepted at <strong>ICLR 2026</strong>. Congratulations to Yunge!`,
+    },
+    {
+      date: "Jun 2025",
+      text: `Our smart vehicle team earned <strong>3rd place</strong> in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations Yunge &amp; Shaibal!`,
+    },
+    {
+      date: "May 2025",
+      text: `Book <a href="https://www.wiley.com/en-us/Edge+Computing%3A+Systems+and+Applications-p-9781394285839" target="_blank"><em>Edge Computing: Systems and Applications</em></a> is now available to pre-order from Wiley.`,
+    },
+    {
+      date: "Apr 2025",
+      text: `Fan Li honored with the <strong>2024 Outstanding Thesis Award</strong> at Oakland University!`,
+    },
+    {
+      date: "Jun 2024",
+      text: `Fan Li successfully defended her master's thesis: <em>"Swin Transformer-Based Multi-Task Model for Brain Tumor Analysis."</em>`,
+    },
+    {
+      date: "Jan 2024",
+      text: `Delivered invited talk <em>"The Practice of Edge Intelligence: Implementations and Insights"</em> at Wayne State University.`,
+    },
+  ],
+
+
+  // ── Publications ────────────────────────────────────────────────────────
+  // Each group has a `label` and an `entries` array.
+  // Entry fields:
+  //   title    – string (required)
+  //   badge    – short label shown as a green badge, e.g. "ICLR 2026" (optional)
+  //   authors  – string; your name will be auto-bolded (required)
+  //   venue    – string (required)
+  //   links    – array of { label, href } objects (optional)
+  publications: [
+    {
+      label: "Book",
+      entries: [
+        {
+          title:   "Edge Computing: Systems and Applications",
+          authors: "Lanyu Xu and Weisong Shi",
+          venue:   "Wiley, 2025",
+          links:   [{ label: "Website", href: "https://edgecomputingbook.org" }],
+        },
+      ],
+    },
+
+    {
+      label: "Recent Conference Papers",
+      entries: [
+        {
+          title:   "MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging",
+          badge:   "IEEE/ACM CHASE 2026",
+          authors: "Fan Li, Arun Iyengar, and Lanyu Xu",
+          venue:   "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026",
+        },
+        {
+          title:   "KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices",
+          badge:   "IEEE/ACM CHASE 2026",
+          authors: "Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and Lanyu Xu",
+          venue:   "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026",
+        },
+        {
+          title:   "Hilbert-Guided Sparse Local Attention",
+          badge:   "ICLR 2026",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "International Conference on Learning Representations (ICLR), 2026",
+        },
+        {
+          title:   "LightAD: A Lightweight Vision-Based Autonomous Driving System",
+          authors: "Yunge Li, Zhaodong Zhou, Shaibal Saha, Ali Irshayyid, Keer Chen, Lanyu Xu, and Jun Chen",
+          venue:   "IEEE MOST, 2026",
+        },
+        {
+          title:   "RepVal: A Skeleton-based Validation System for Functional Fitness Repetition on Edge Devices",
+          authors: "Lucas Alves, Fan Li, and Lanyu Xu",
+          venue:   "Workshop on Edge Intelligence @ ACM/IEEE SEC, 2025",
+          links:   [
+            { label: "Paper", href: "https://dl.acm.org/doi/10.1145/3769102.3774242" },
+            { label: "Code",  href: "https://github.com/lc-leonardo/RepVal" },
+          ],
+        },
+        {
+          title:   "ARMBench: Benchmarking Adversarial Robustness of Multitask Perception in Autonomous Driving",
+          authors: "Yunge Li, Yuhong Liu, and Lanyu Xu",
+          venue:   "ACM/IEEE Symposium on Edge Computing (SEC), 2025",
+          links:   [
+            { label: "Paper", href: "https://dl.acm.org/doi/10.1145/3769102.3770607" },
+            { label: "Code",  href: "https://github.com/Yunge6666/YOLOP-adversarial-attack-and-defense" },
+          ],
+        },
+        {
+          title:   "EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices",
+          authors: "Shaibal Saha and Lanyu Xu",
+          venue:   "T4V Workshop @ CVPRW, 2025",
+        },
+        {
+          title:   "The Architectural Implications of Multi-modal Detection Models for Autonomous Driving Systems",
+          authors: "Yunge Li, Shaibal Saha, and Lanyu Xu",
+          venue:   "IEEE MOST, 2024",
+          links:   [{ label: "Paper", href: "https://ieeexplore.ieee.org/document/10607110" }],
+        },
+      ],
+    },
+
+    {
+      label: "Journal Papers",
+      entries: [
+        {
+          title:   "Vision Transformers on the Edge: A Comprehensive Survey of Model Compression and Acceleration Strategies",
+          authors: "Shaibal Saha and Lanyu Xu",
+          venue:   "Neurocomputing, 2025",
+          links:   [{ label: "arXiv", href: "https://arxiv.org/abs/2503.02891" }],
+        },
+        {
+          title:   "Deep Reinforcement Learning and Its Applications in Medical Imaging and Radiation Therapy: A Survey",
+          authors: "Lanyu Xu, Simeng Zhu, and Ning Wen",
+          venue:   "Physics in Medicine &amp; Biology, 2022",
+          links:   [{ label: "Paper", href: "https://iopscience.iop.org/article/10.1088/1361-6560/ac9cb3" }],
+        },
+        {
+          title:   "NLUBroker: A QoE-driven Broker System for Natural Language Understanding Services",
+          authors: "Lanyu Xu, Arun Iyengar, and Weisong Shi",
+          venue:   "ACM Transactions on Internet Technology, 2022",
+          links:   [{ label: "Paper", href: "https://dl.acm.org/doi/abs/10.1145/3497807" }],
+        },
+        {
+          title:   "Edge Computing: Vision and Challenges",
+          authors: "Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, and Lanyu Xu",
+          venue:   "IEEE Internet of Things Journal, 2016",
+          links:   [{ label: "Paper", href: "https://ieeexplore.ieee.org/document/7488250" }],
+        },
+      ],
+    },
+
+    {
+      label: "Preprints",
+      entries: [
+        {
+          title:   "Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "arXiv:2512.22760, 2025",
+        },
+        {
+          title:   "A Systematic Review of Research on Large Language Models for Computer Programming Education",
+          authors: "Meina Zhu, Lanyu Xu, and Barbara Ericson",
+          venue:   "arXiv:2506.21818, 2025",
+          links:   [{ label: "arXiv", href: "https://arxiv.org/abs/2506.21818" }],
+        },
+        {
+          title:   "Panoptic Perception for Autonomous Driving: A Survey",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "arXiv:2408.15388, 2024",
+          links:   [{ label: "arXiv", href: "https://www.arxiv.org/pdf/2408.15388" }],
+        },
+      ],
+    },
+  ],
+
+
+  // ── Lab ─────────────────────────────────────────────────────────────────
+  lab: {
+    intro: `The Edge Intelligent System Lab investigates how intelligent systems can perceive,
+      reason, and act at the edge of the network — where data is generated and latency matters.
+      Our research focuses on efficient AI model design and hardware-software co-design for
+      resource-constrained environments. We build systems that work: from transformer-based models
+      for autonomous driving perception and medical imaging, to edge-deployed AI judges for fitness
+      movement analysis. We are particularly interested in pushing what edge devices can do with
+      vision and decision-making, without sacrificing real-world usability.`,
+
+    // Student groups. Each member may have an optional `href` for their website.
+    students: [
+      {
+        group: "Ph.D. Students",
+        members: [
+          { name: "Shaibal Saha", href: "https://shaibal13.github.io", since: "Fall 2022–" },
+          { name: "Yunge Li",                                           since: "Winter 2023–" },
+          { name: "Fan Li",                                             since: "Winter 2023–" },
+        ],
+      },
+      {
+        group: "Master's Students",
+        members: [
+          { name: "Lucas Alves", since: "Fall 2024–" },
+        ],
+      },
+    ],
+  },
+
+
+  // ── Awards & Funding ────────────────────────────────────────────────────
+  awards: [
+    { year: "2025", text: "NSF EAGER Award, 2025–2027 (Co-PI)" },
+    { year: "2025", text: "Oakland University Research Committee Award (PI)" },
+    { year: "2023", text: "NSF CRII Award, 2023–2025 (PI)" },
+    { year: "2023", text: "NASA Michigan Space Grant Consortium Research Seed Grant, 2023–2024 (PI)" },
+    { year: "2023", text: "Oakland University Research Committee Award (PI)" },
+  ],
+
+
+  // ── Teaching ────────────────────────────────────────────────────────────
+  teaching: [
+    { code: "CSI 4110 / 5110", name: "Foundations of Edge AI",              term: "Fall 24, Fall 25, Win 26" },
+    { code: "CSI 3680",        name: "Script Programming",                  term: "Fall 23–25" },
+    { code: "CSI 4380",        name: "Game Programming",                    term: "Winter 22–25" },
+    { code: "CSI 5610",        name: "Advanced Data Structures &amp; Algorithms", term: "Winter 25" },
+    { code: "CSI 3660",        name: "System Administration",               term: "Fall 21–23" },
+  ],
+
+
+  // ── Service ─────────────────────────────────────────────────────────────
+  service: [
+    {
+      column: "Organizing Roles",
+      items: [
+        "Publication Co-Chair, SEC 2026",
+        "Publicity Co-Chair, SEC 2025",
+        "Publication Chair, MOST 2025",
+        "Publication Chair, MobiCom 2024",
+        "Publication Chair, IoTDI 2024",
+        "Student Travel Grant Chair, SEC 2023",
+        "Publication Chair, IoTDI 2023",
+        "Student Travel Grant Chair, SEC 2022",
+      ],
+    },
+    {
+      column: "Editorial Roles",
+      items: [
+        "Associate Editor, Smart Health (2025–)",
+        "Review Editor, Frontiers in HPC (2023–)",
+        "Editor, Journal of Edge Computing (2023–)",
+        "Editor, Journal of Ambient Intelligence (2022–)",
+        "Committee Member, NCWIT Aspirations in Computing (2021–)",
+      ],
+    },
+  ],
+
+}; // end SITE
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//
+//  RENDER FUNCTIONS
+//  ─────────────────
+//  These turn the data above into HTML. You generally don't need to edit
+//  anything below this line.
+//
+// ═══════════════════════════════════════════════════════════════════════════
+
+/** Bold occurrences of the site owner's name in an author string. */
+function formatAuthors(str) {
+  // Match "Lanyu Xu" with optional middle name/initial and surrounding context
+  return str.replace(/Lanyu\s+(?:\(Lori\)\s+)?Xu/g, '<strong>$&</strong>');
+}
+
+/** Render a single publication entry. */
+function renderPubEntry(entry) {
+  const badge  = entry.badge
+    ? ` <span class="pub-badge">${entry.badge}</span>` : '';
+  const links  = (entry.links || []).map(l =>
+    `<a href="${l.href}" class="pub-link" target="_blank">${l.label}</a>`
+  ).join('');
+  const linksHtml = links ? `<div class="pub-links">${links}</div>` : '';
+
+  return `
+    <div class="pub-entry">
+      <p class="pub-title">${entry.title}${badge}</p>
+      <p class="pub-authors">${formatAuthors(entry.authors)}</p>
+      <p class="pub-venue">${entry.venue}</p>
+      ${linksHtml}
+    </div>`;
+}
+
+/** Render the full page. */
+function renderSite() {
+  const S = SITE;
+
+  // ── Nav ────────────────────────────────────────────────────────────────
+  document.getElementById('nav-inner').innerHTML = `
+    <a href="#hero" class="nav-name">${S.name}</a>
     <ul class="nav-links">
       <li><a href="#news">News</a></li>
       <li><a href="#publications">Research</a></li>
       <li><a href="#lab">Lab</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#service">Service</a></li>
-    </ul>
-  </div>
-</nav>
+    </ul>`;
 
-<main>
+  // ── Hero ───────────────────────────────────────────────────────────────
+  const heroLinks = S.links.map(l => {
+    const ext = l.external ? ' target="_blank"' : '';
+    return `<a href="${l.href}" class="hero-link"${ext}>${l.label}</a>`;
+  }).join('\n      ');
 
-<!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
-<section id="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Assistant Professor · Oakland University</p>
-    <h1 class="hero-name">Lanyu<br>(Lori) Xu</h1>
-    <p class="hero-bio">
-      I design, analyze, and build efficient <a href="#lab">edge AI</a> systems — where intelligent perception runs close to the data, on the hardware that matters. My work spans vision transformer efficiency and edge-optimized inference, applied to autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
-      <br><br>
-      Ph.D. in Computer Science, <a href="https://wayne.edu" target="_blank">Wayne State University</a> (advised by <a href="https://www.weisongshi.org/" target="_blank">Dr. Weisong Shi</a>). B.S. in Computer Science, <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>.
-    </p>
-    <div class="hero-links">
-      <a href="mailto:lxu@oakland.edu" class="hero-link">✉ Email</a>
-      <a href="https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ" class="hero-link" target="_blank">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/lanyuxu/" class="hero-link" target="_blank">LinkedIn</a>
-      <a href="https://edgecomputingbook.org" class="hero-link" target="_blank">Book</a>
-    </div>
-    <p class="hero-meta">📍 Engineering Center 546 · 115 Library Drive · Rochester, MI</p>
-  </div>
-  <img src="https://lori930.github.io/images/headshot-LX-2025.jpg" alt="Lanyu (Lori) Xu" class="hero-photo" />
-</section>
-
-<!-- ═══ NEWS ══════════════════════════════════════════════════════════ -->
-<section id="news">
-  <p class="section-label">News</p>
-  <ul class="news-list">
+  // ── News ───────────────────────────────────────────────────────────────
+  const newsItems = S.news.map(n => `
     <li class="news-item">
-      <span class="news-date">Apr 2026</span>
-      <span class="news-text">We have two papers <em> accepted at <strong>IEEE/ACM CHASE 2026</strong>. Congratulations to the team!</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jan 2026</span>
-      <span class="news-text">Paper <em>"Hilbert-Guided Sparse Local Attention"</em> accepted at <strong>ICLR 2026</strong>. Congratulations to Yunge!</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jun 2025</span>
-      <span class="news-text">Our smart vehicle team earned <strong>3rd place</strong> in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations Yunge &amp; Shaibal!</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">May 2025</span>
-      <span class="news-text">Book <a href="https://www.wiley.com/en-us/Edge+Computing%3A+Systems+and+Applications-p-9781394285839" target="_blank"><em>Edge Computing: Systems and Applications</em></a> is now available to pre-order from Wiley.</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Apr 2025</span>
-      <span class="news-text">Fan Li honored with the <strong>2024 Outstanding Thesis Award</strong> at Oakland University!</span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jun 2024</span>
-      <span class="news-text">Fan Li successfully defended her master's thesis: <em>"Swin Transformer-Based Multi-Task Model for Brain Tumor Analysis."</em></span>
-    </li>
-    <li class="news-item">
-      <span class="news-date">Jan 2024</span>
-      <span class="news-text">Delivered invited talk <em>"The Practice of Edge Intelligence: Implementations and Insights"</em> at Wayne State University.</span>
-    </li>
-  </ul>
-</section>
+      <span class="news-date">${n.date}</span>
+      <span class="news-text">${n.text}</span>
+    </li>`).join('');
 
-<!-- ═══ PUBLICATIONS ══════════════════════════════════════════════════ -->
-<section id="publications">
-  <p class="section-label">Research &amp; Publications</p>
+  // ── Publications ───────────────────────────────────────────────────────
+  const pubGroups = S.publications.map(group => `
+    <div class="pub-group">
+      <div class="pub-group-label">${group.label}</div>
+      ${group.entries.map(renderPubEntry).join('')}
+    </div>`).join('');
 
-  <!-- Book -->
-  <div class="pub-group">
-    <div class="pub-group-label">Book</div>
-    <div class="pub-entry">
-      <p class="pub-title">Edge Computing: Systems and Applications</p>
-      <p class="pub-authors"><strong>Lanyu Xu</strong> and Weisong Shi</p>
-      <p class="pub-venue">Wiley, 2025</p>
-      <div class="pub-links">
-        <a href="https://edgecomputingbook.org" class="pub-link" target="_blank">Website</a>
-      </div>
-    </div>
-  </div>
+  // ── Lab ────────────────────────────────────────────────────────────────
+  const studentGroups = S.lab.students.map(sg => {
+    const members = sg.members.map(m => {
+      const nameHtml = m.href
+        ? `<a href="${m.href}" target="_blank">${m.name}</a>` : m.name;
+      return `<li>${nameHtml} — ${m.since}</li>`;
+    }).join('');
+    return `
+    <div class="student-group">
+      <p class="student-group-label">${sg.group}</p>
+      <ul class="student-list">${members}</ul>
+    </div>`;
+  }).join('');
 
-  <!-- Conference Papers -->
-  <div class="pub-group">
-    <div class="pub-group-label">Recent Conference Papers</div>
-    <div class="pub-entry">
-      <p class="pub-title">MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging <span class="pub-badge">IEEE/ACM CHASE 2026</span></p>
-      <p class="pub-authors">Fan Li, Arun Iyengar, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026</p>
-    </div>
+  // ── Awards ─────────────────────────────────────────────────────────────
+  const awardItems = S.awards.map(a => `
+    <li class="award-item">
+      <span class="award-year">${a.year}</span>
+      <span>${a.text}</span>
+    </li>`).join('');
 
-    <div class="pub-entry">
-      <p class="pub-title">KD-Judge: A Knowledge-Driven Automated Judge Framework for
-        Functional Fitness Movements on Edge Devices <span class="pub-badge">IEEE/ACM CHASE 2026</span></p>
-      <p class="pub-authors">Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026</p>
-    </div>
-
-
-    <div class="pub-entry">
-      <p class="pub-title">Hilbert-Guided Sparse Local Attention <span class="pub-badge">ICLR 2026</span></p>
-      <p class="pub-authors">Yunge Li and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">International Conference on Learning Representations (ICLR), 2026</p>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">LightAD: A Lightweight Vision-Based Autonomous Driving System</p>
-      <p class="pub-authors">Yunge Li, Zhaodong Zhou, Shaibal Saha, Ali Irshayyid, Keer Chen, <strong>Lanyu Xu</strong>, and Jun Chen</p>
-      <p class="pub-venue">IEEE MOST, 2026</p>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">RepVal: A Skeleton-based Validation System for Functional Fitness Repetition on Edge Devices</p>
-      <p class="pub-authors">Lucas Alves, Fan Li, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">Workshop on Edge Intelligence @ ACM/IEEE SEC, 2025</p>
-      <div class="pub-links">
-        <a href="https://dl.acm.org/doi/10.1145/3769102.3774242" class="pub-link" target="_blank">Paper</a>
-        <a href="https://github.com/lc-leonardo/RepVal" class="pub-link" target="_blank">Code</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">ARMBench: Benchmarking Adversarial Robustness of Multitask Perception in Autonomous Driving</p>
-      <p class="pub-authors">Yunge Li, Yuhong Liu, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">ACM/IEEE Symposium on Edge Computing (SEC), 2025</p>
-      <div class="pub-links">
-        <a href="https://dl.acm.org/doi/10.1145/3769102.3770607" class="pub-link" target="_blank">Paper</a>
-        <a href="https://github.com/Yunge6666/YOLOP-adversarial-attack-and-defense" class="pub-link" target="_blank">Code</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices</p>
-      <p class="pub-authors">Shaibal Saha and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">T4V Workshop @ CVPRW, 2025</p>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">The Architectural Implications of Multi-modal Detection Models for Autonomous Driving Systems</p>
-      <p class="pub-authors">Yunge Li, Shaibal Saha, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">IEEE MOST, 2024</p>
-      <div class="pub-links">
-        <a href="https://ieeexplore.ieee.org/document/10607110" class="pub-link" target="_blank">Paper</a>
-      </div>
-    </div>
-
-  <!-- Journal Papers -->
-  <div class="pub-group">
-    <div class="pub-group-label">Journal Papers</div>
-
-    <div class="pub-entry">
-      <p class="pub-title">Vision Transformers on the Edge: A Comprehensive Survey of Model Compression and Acceleration Strategies</p>
-      <p class="pub-authors">Shaibal Saha and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">Neurocomputing, 2025</p>
-      <div class="pub-links">
-        <a href="https://arxiv.org/abs/2503.02891" class="pub-link" target="_blank">arXiv</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">Deep Reinforcement Learning and Its Applications in Medical Imaging and Radiation Therapy: A Survey</p>
-      <p class="pub-authors"><strong>Lanyu Xu</strong>, Simeng Zhu, and Ning Wen</p>
-      <p class="pub-venue">Physics in Medicine &amp; Biology, 2022</p>
-      <div class="pub-links">
-        <a href="https://iopscience.iop.org/article/10.1088/1361-6560/ac9cb3" class="pub-link" target="_blank">Paper</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">NLUBroker: A QoE-driven Broker System for Natural Language Understanding Services</p>
-      <p class="pub-authors"><strong>Lanyu Xu</strong>, Arun Iyengar, and Weisong Shi</p>
-      <p class="pub-venue">ACM Transactions on Internet Technology, 2022</p>
-      <div class="pub-links">
-        <a href="https://dl.acm.org/doi/abs/10.1145/3497807" class="pub-link" target="_blank">Paper</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">Edge Computing: Vision and Challenges</p>
-      <p class="pub-authors">Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">IEEE Internet of Things Journal, 2016</p>
-      <div class="pub-links">
-        <a href="https://ieeexplore.ieee.org/document/7488250" class="pub-link" target="_blank">Paper</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Preprints -->
-  <div class="pub-group">
-    <div class="pub-group-label">Preprints</div>
-
-    <div class="pub-entry">
-      <p class="pub-title">Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers</p>
-      <p class="pub-authors">Yunge Li and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">arXiv:2512.22760, 2025</p>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">A Systematic Review of Research on Large Language Models for Computer Programming Education</p>
-      <p class="pub-authors">Meina Zhu, <strong>Lanyu Xu</strong>, and Barbara Ericson</p>
-      <p class="pub-venue">arXiv:2506.21818, 2025</p>
-      <div class="pub-links">
-        <a href="https://arxiv.org/abs/2506.21818" class="pub-link" target="_blank">arXiv</a>
-      </div>
-    </div>
-
-    <div class="pub-entry">
-      <p class="pub-title">Panoptic Perception for Autonomous Driving: A Survey</p>
-      <p class="pub-authors">Yunge Li and <strong>Lanyu Xu</strong></p>
-      <p class="pub-venue">arXiv:2408.15388, 2024</p>
-      <div class="pub-links">
-        <a href="https://www.arxiv.org/pdf/2408.15388" class="pub-link" target="_blank">arXiv</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ LAB ════════════════════════════════════════════════════════════ -->
-<section id="lab">
-  <p class="section-label">Edge Intelligent System Lab</p>
-  <p class="lab-intro">
-    The Edge Intelligent System Lab invetigates how intelligent systems can perceive, reason, and act at the edge of the network --  where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource constrained environments. We build systems that work: from the transformer-based models for autonomous driving perception and medical imaging, to edge-deployed AI judges for fitness movement analysis. We are particularly interested in pushing what edge devices can do with vision and decision-making, without sacrificing real-world usability. 
-  </p>
-
-  <div class="student-group">
-    <p class="student-group-label">Ph.D. Students</p>
-    <ul class="student-list">
-      <li><a href="https://shaibal13.github.io" target="_blank">Shaibal Saha</a> — Fall 2022–</li>
-      <li>Yunge Li — Winter 2023–</li>
-      <li>Fan Li — Winter 2023–</li>
-    </ul>
-  </div>
-
-  <div class="student-group">
-    <p class="student-group-label">Master's Students</p>
-    <ul class="student-list">
-      <li>Lucas Alves — Fall 2024–</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ═══ AWARDS ════════════════════════════════════════════════════════ -->
-<section id="awards">
-  <p class="section-label">Awards &amp; Funding</p>
-  <ul class="award-list">
-    <li class="award-item"><span class="award-year">2025</span><span>NSF EAGER Award, 2025–2027 (Co-PI)</span></li>
-    <li class="award-item"><span class="award-year">2025</span><span>Oakland University Research Committee Award (PI)</span></li>
-    <li class="award-item"><span class="award-year">2023</span><span>NSF CRII Award, 2023–2025 (PI)</span></li>
-    <li class="award-item"><span class="award-year">2023</span><span>NASA Michigan Space Grant Consortium Research Seed Grant, 2023–2024 (PI)</span></li>
-    <li class="award-item"><span class="award-year">2023</span><span>Oakland University Research Committee Award (PI)</span></li>
-  </ul>
-</section>
-
-<!-- ═══ TEACHING ══════════════════════════════════════════════════════ -->
-<section id="teaching">
-  <p class="section-label">Teaching</p>
-  <div class="teaching-grid">
+  // ── Teaching ───────────────────────────────────────────────────────────
+  const teachingCards = S.teaching.map(c => `
     <div class="teaching-card">
-      <p class="teaching-code">CSI 4110 / 5110</p>
-      <p class="teaching-name">Foundations of Edge AI</p>
-      <p class="teaching-term">Fall 24, Fall 25, Win 26</p>
-    </div>
-    <div class="teaching-card">
-      <p class="teaching-code">CSI 3680</p>
-      <p class="teaching-name">Script Programming</p>
-      <p class="teaching-term">Fall 23–25</p>
-    </div>
-    <div class="teaching-card">
-      <p class="teaching-code">CSI 4380</p>
-      <p class="teaching-name">Game Programming</p>
-      <p class="teaching-term">Winter 22–25</p>
-    </div>
-    <div class="teaching-card">
-      <p class="teaching-code">CSI 5610</p>
-      <p class="teaching-name">Advanced Data Structures &amp; Algorithms</p>
-      <p class="teaching-term">Winter 25</p>
-    </div>
-    <div class="teaching-card">
-      <p class="teaching-code">CSI 3660</p>
-      <p class="teaching-name">System Administration</p>
-      <p class="teaching-term">Fall 21–23</p>
-    </div>
-  </div>
-</section>
+      <p class="teaching-code">${c.code}</p>
+      <p class="teaching-name">${c.name}</p>
+      <p class="teaching-term">${c.term}</p>
+    </div>`).join('');
 
-<!-- ═══ SERVICE ═══════════════════════════════════════════════════════ -->
-<section id="service">
-  <p class="section-label">Service</p>
-  <div class="service-grid">
+  // ── Service ────────────────────────────────────────────────────────────
+  const serviceCols = S.service.map(col => {
+    const items = col.items.map(i => `<li>${i}</li>`).join('');
+    return `
     <div class="service-col">
-      <h3>Organizing Roles</h3>
-      <ul class="service-list">
-        <li>Publication Co-Chair, SEC 2026</li>
-        <li>Publicity Co-Chair, SEC 2025</li>
-        <li>Publication Chair, MOST 2025</li>
-        <li>Publication Chair, MobiCom 2024</li>
-        <li>Publication Chair, IoTDI 2024</li>
-        <li>Student Travel Grant Chair, SEC 2023</li>
-        <li>Publication Chair, IoTDI 2023</li>
-        <li>Student Travel Grant Chair, SEC 2022</li>
-      </ul>
-    </div>
-    <div class="service-col">
-      <h3>Editorial Roles</h3>
-      <ul class="service-list">
-        <li>Associate Editor, Smart Health (2025–)</li>
-        <li>Review Editor, Frontiers in HPC (2023–)</li>
-        <li>Editor, Journal of Edge Computing (2023–)</li>
-        <li>Editor, Journal of Ambient Intelligence (2022–)</li>
-        <li>Committee Member, NCWIT Aspirations in Computing (2021–)</li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <h3>${col.column}</h3>
+      <ul class="service-list">${items}</ul>
+    </div>`;
+  }).join('');
 
-</main>
+  // ── Assemble main ──────────────────────────────────────────────────────
+  document.getElementById('main-content').innerHTML = `
 
-<footer>
-  <p>Lanyu (Lori) Xu · Oakland University · <a href="mailto:lxu@oakland.edu" style="color:var(--ink3)">lxu@oakland.edu</a></p>
-</footer>
+    <section id="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">${S.title}</p>
+        <h1 class="hero-name">${S.nameHtml}</h1>
+        <p class="hero-bio">${S.bio}</p>
+        <div class="hero-links">
+          ${heroLinks}
+        </div>
+        <p class="hero-meta">${S.location}</p>
+      </div>
+      <img src="${S.photo}" alt="${S.name}" class="hero-photo" />
+    </section>
 
+    <section id="news">
+      <p class="section-label">News</p>
+      <ul class="news-list">${newsItems}</ul>
+    </section>
+
+    <section id="publications">
+      <p class="section-label">Research &amp; Publications</p>
+      ${pubGroups}
+    </section>
+
+    <section id="lab">
+      <p class="section-label">Edge Intelligent System Lab</p>
+      <p class="lab-intro">${S.lab.intro}</p>
+      ${studentGroups}
+    </section>
+
+    <section id="awards">
+      <p class="section-label">Awards &amp; Funding</p>
+      <ul class="award-list">${awardItems}</ul>
+    </section>
+
+    <section id="teaching">
+      <p class="section-label">Teaching</p>
+      <div class="teaching-grid">${teachingCards}</div>
+    </section>
+
+    <section id="service">
+      <p class="section-label">Service</p>
+      <div class="service-grid">${serviceCols}</div>
+    </section>`;
+
+  // ── Footer ─────────────────────────────────────────────────────────────
+  document.getElementById('site-footer').innerHTML = `
+    <p>${S.name} · Oakland University · <a href="mailto:lxu@oakland.edu" style="color:var(--ink3)">lxu@oakland.edu</a></p>`;
+}
+
+renderSite();
+</script>
 </body>
 </html>
