@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Lanyu (Lori) Xu"
-description              : "Assistant Professor of Computer Science at Oakland University. Research focuses on edge AI, vision transformer efficiency, autonomous driving, and medical imaging."
+description              : "Assistant Professor of Computer Science at Oakland University"
 repository               : "lori930/lori930.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,7 +23,7 @@ baidu_site_verification  :
 author:
   name             : "Lanyu (Lori) Xu"
   avatar           : "images/headshot-LX-2025.jpg"
-  bio              : "Assistant Professor · Oakland University"
+  # bio              : "Assistant Professor · Oakland University"
   location         : "Rochester, MI"
   employer         : "Oakland University"
   pubmed           :

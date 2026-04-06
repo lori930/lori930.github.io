@@ -130,14 +130,14 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 
 | Course | Title | Terms |
 |--------|-------|-------|
-| CSI 4110 / 5110 | Foundations of Edge AI | Fall 24, Fall 25, Win 26 |
+| CSI 3660 | System Administration | Fall 21–23 |
 | CSI 3680 | Script Programming | Fall 23–25 |
 | CSI 4380 | Game Programming | Winter 22–25 |
-| CSI 5610 | Advanced Data Structures & Algorithms | Winter 25 |
-| CSI 3660 | System Administration | Fall 21–23 |
+| CSI 4110 / 5110 | Foundations of Edge AI | Fall 24, Fall 25, Winter 26 |
+| CSI 5610 | Advanced Data Structures & Algorithms | Winter 25, Summer 26 |
 
 
-# Lab — Edge Intelligent System Lab
+# 🖥️ Lab — Edge Intelligent System Lab
 
 The Edge Intelligent System Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments.
 
@@ -150,7 +150,7 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
 - Lucas Alves (Fall 2024–)
 
 
-# Service
+# 📂 Service
 
 **Organizing Roles**
 - Publication Co-Chair, SEC 2026
@@ -164,7 +164,7 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
 
 **Editorial Roles**
 - Associate Editor, Smart Health (2025–)
-- Review Editor, Frontiers in HPC (2023–)
-- Editor, Journal of Edge Computing (2023–)
+<!-- - Review Editor, Frontiers in HPC (2023–) -->
+<!-- - Editor, Journal of Edge Computing (2023–) -->
 - Editor, Journal of Ambient Intelligence (2022–)
 - Committee Member, NCWIT Aspirations in Computing (2021–)
