@@ -36,6 +36,7 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 
 
 # 📝 Publications
+👓 [Full publication list](https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ&view_op=list_works&sortby=pubdate) 👓
 
 ## Book
 
@@ -43,17 +44,17 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
   **Lanyu Xu** and Weisong Shi \\
   *Wiley, 2025* \| [Website](https://edgecomputingbook.org)
 
-## Conference Papers
+## Selected Conference Papers
 
-- **MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging** <span class="badge">IEEE/ACM CHASE 2026</span> \\
+- **MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging** \\
   Fan Li, Arun Iyengar, and **Lanyu Xu** \\
   *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026*
 
-- **KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices** <span class="badge">IEEE/ACM CHASE 2026</span> \\
+- **KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices**  \\
   Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and **Lanyu Xu** \\
   *IEEE/ACM Conference on Connected Health, 2026*
 
-- **Hilbert-Guided Sparse Local Attention** <span class="badge">ICLR 2026</span> \\
+- **Hilbert-Guided Sparse Local Attention** \\
   Yunge Li and **Lanyu Xu** \\
   *International Conference on Learning Representations (ICLR), 2026*
 
@@ -136,7 +137,7 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 | CSI 3660 | System Administration | Fall 21–23 |
 
 
-# 🧪 Lab — Edge Intelligent System Lab
+# Lab — Edge Intelligent System Lab
 
 The Edge Intelligent System Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments.
 
@@ -149,7 +150,7 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
 - Lucas Alves (Fall 2024–)
 
 
-# 🗣 Service
+# Service
 
 **Organizing Roles**
 - Publication Co-Chair, SEC 2026
