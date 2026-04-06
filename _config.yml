@@ -24,8 +24,9 @@ author:
   name             : "Lanyu (Lori) Xu"
   avatar           : "images/headshot-LX-2025.jpg"
   # bio              : "Assistant Professor · Oakland University"
+  bio              : "许蓝予"
   location         : "Rochester, MI"
-  employer         : "Oakland University"
+  # employer         : "Oakland University"
   pubmed           :
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ"
   email            : "lxu@oakland.edu"
