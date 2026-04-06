@@ -17,15 +17,17 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I design, analyze, and build efficient **edge AI** systems — where intelligent perception runs close to the data, on the hardware that matters. My work spans vision transformer efficiency and edge-optimized inference, applied to autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
+I design, analyze, and build efficient edge AI systems — bringing intelligent perception closer to where data is generated, on resource-constrained hardware. My research focuses on vision transformer efficiency and edge-optimized inference, with applications in autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
 
-I am an Assistant Professor of Computer Science at [Oakland University](https://www.oakland.edu) (Engineering Center 546, 115 Library Drive, Rochester, MI). I received my Ph.D. in Computer Science from [Wayne State University](https://wayne.edu), advised by [Dr. Weisong Shi](https://www.weisongshi.org/), and my B.S. in Computer Science from [Tongji University](https://www.tongji.edu.cn/).
+I am an Assistant Professor of Computer Science at [Oakland University](https://www.oakland.edu) and the Director of Edge Intelligent Systems (EIS) Lab. I received my Ph.D. in Computer Science from [Wayne State University](https://wayne.edu), where I was advised by [Dr. Weisong Shi](https://www.weisongshi.org/), and my B.S. in Computer Science from [Tongji University](https://www.tongji.edu.cn/).
 
 <!-- I am the co-author of the textbook [*Edge Computing: Systems and Applications*](https://edgecomputingbook.org) (Wiley, 2025). -->
 
 # 🖥️ Lab — Edge Intelligent System Lab
 
-The Edge Intelligent System Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments.
+The EIS Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency is critical. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments. 
+
+Our work has been published in top venues such as ICLR, IJCNN, Neurocomputing Journal. We aim to bridge the gap between cutting-edge deep learning and real-world deployment at the edge. 
 
 **Ph.D. Students**
 - [Shaibal Saha](https://shaibal13.github.io) (Fall 2022–)
