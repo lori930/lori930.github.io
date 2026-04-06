@@ -156,9 +156,13 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
 
 
 
-# 📂 Service
+# 📂 Academic Service
 
-**Organizing Roles**
+**Editorships**
+- Associate Editor, Smart Health (2025–)
+- Editor, Journal of Ambient Intelligence (2022–)
+
+**Organizing Committee**
 - Publication Co-Chair, SEC 2026
 - Publicity Co-Chair, SEC 2025
 - Publication Chair, MOST 2025
@@ -168,9 +172,11 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
 - Publication Chair, IoTDI 2023
 - Student Travel Grant Chair, SEC 2022
 
-**Editorial Roles**
-- Associate Editor, Smart Health (2025–)
-<!-- - Review Editor, Frontiers in HPC (2023–) -->
-<!-- - Editor, Journal of Edge Computing (2023–) -->
-- Editor, Journal of Ambient Intelligence (2022–)
-- Committee Member, NCWIT Aspirations in Computing (2021–)
+**(Technical) Program Committee**
+- IEEE International Conference on Cloud Computing, 2022-26
+- International Conference on Computer Communications and Networks (ICCCN), 2024-26
+- The 4th Edge Computing Workshop, 2024
+- International Conference on Intelligent Environments, 2023-24
+- IEEE International Conference on Distributed Computing Systems (ICDCS), 2022-23
+- International Conference on Machine Learning and Applications, 2021
+
