@@ -25,9 +25,9 @@ I am an Assistant Professor of Computer Science at [Oakland University](https://
 
 # 🖥️ Lab — Edge Intelligent System Lab
 
-The EIS Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency is critical. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments. 
+The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and efficiency is critical. We aim to bridge the gap between cutting-edge deep learning and real-world deployment at the edge. 
 
-Our work has been published in top venues such as ICLR, IJCNN, Neurocomputing Journal. We aim to bridge the gap between cutting-edge deep learning and real-world deployment at the edge. 
+Our work has been published in top-tier venues such as ICLR, IJCNN, and Neurocomputing.
 
 **Ph.D. Students**
 - [Shaibal Saha](https://shaibal13.github.io) (Fall 2022–)
