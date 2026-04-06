@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lanyu (Lori) Xu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  /* ─── Reset & Base ──────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --serif:        'EB Garamond', Georgia, serif;
+    --sans:         'DM Sans', system-ui, sans-serif;
+    --ink:          #1a1a18;
+    --ink2:         #4a4a44;
+    --ink3:         #888880;
+    --rule:         #e0ddd6;
+    --bg:           #fafaf7;
+    --sidebar-bg:   #f2f0eb;
+    --accent:       #2d5a3d;
+    --accent-light: #e8f0eb;
+    --link:         #1a3f5c;
+    --sidebar-w:    268px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ─── Sidebar ─────────────────────────────────────────────────── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2.5rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    scrollbar-width: none;
+  }
+  .sidebar::-webkit-scrollbar { display: none; }
+
+  .sidebar-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(5%);
+    border: 3px solid var(--rule);
+  }
+
+  .sidebar-name {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar-position {
+    font-size: 12.5px;
+    color: var(--ink2);
+    text-align: center;
+    line-height: 1.6;
+    margin-top: -0.5rem;
+  }
+
+  .sidebar-position strong {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .sidebar-hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sidebar-location {
+    font-size: 12px;
+    color: var(--ink3);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Contact / social links */
+  .sidebar-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .sidebar-links a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 13px;
+    color: var(--ink2);
+    text-decoration: none;
+    padding: 3px 0;
+    transition: color 0.15s;
+  }
+
+  .sidebar-links a:hover { color: var(--accent); }
+
+  .sidebar-links .lnk-icon {
+    width: 18px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    color: var(--ink3);
+  }
+
+  /* Section nav */
+  .sidebar-nav {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sidebar-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-nav a {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.15s;
+  }
+
+  .sidebar-nav a:hover { color: var(--accent); }
+
+  /* ─── Main wrapper ────────────────────────────────────────────── */
+  .main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .main-content {
+    flex: 1;
+    max-width: 760px;
+    padding: 3.5rem 3.5rem 2rem;
+  }
+
+  section {
+    padding: 2.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-child { border-bottom: none; }
+
+  /* ─── Section labels ──────────────────────────────────────────── */
+  .section-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ─── About ───────────────────────────────────────────────────── */
+  .about-text {
+    font-size: 15.5px;
+    color: var(--ink2);
+    line-height: 1.85;
+  }
+
+  .about-text a {
+    color: var(--link);
+    text-underline-offset: 3px;
+  }
+
+  /* ─── News ────────────────────────────────────────────────────── */
+  .news-list { list-style: none; }
+
+  .news-item {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14.5px;
+  }
+
+  .news-item:last-child { border-bottom: none; }
+
+  .news-date {
+    font-size: 12px;
+    color: var(--ink3);
+    font-weight: 500;
+    padding-top: 2px;
+    white-space: nowrap;
+  }
+
+  .news-text { color: var(--ink2); line-height: 1.6; }
+  .news-text a { color: var(--link); text-underline-offset: 3px; }
+
+  /* ─── Publications ────────────────────────────────────────────── */
+  .pub-group { margin-bottom: 2.5rem; }
+  .pub-group:last-child { margin-bottom: 0; }
+
+  .pub-group-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 1.2rem;
+  }
+
+  .pub-entry {
+    padding: 0.9rem 0;
+    border-bottom: 1px dotted var(--rule);
+  }
+
+  .pub-entry:last-child { border-bottom: none; }
+
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1.0rem;
+    line-height: 1.45;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .pub-authors {
+    font-size: 13px;
+    color: var(--ink3);
+    margin-bottom: 0.15rem;
+  }
+
+  .pub-venue {
+    font-size: 13px;
+    color: var(--ink2);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+  }
+
+  .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+  .pub-link {
+    font-size: 12px;
+    color: var(--link);
+    text-decoration: none;
+    padding: 2px 8px;
+    border: 1px solid #b8cfe0;
+    border-radius: 3px;
+    transition: all 0.12s;
+  }
+
+  .pub-link:hover { background: #e6f1fb; }
+
+  .pub-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 1px 7px;
+    border-radius: 3px;
+    background: var(--accent-light);
+    color: var(--accent);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ─── Lab ─────────────────────────────────────────────────────── */
+  .lab-intro {
+    font-size: 15px;
+    color: var(--ink2);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .student-group { margin-bottom: 1.75rem; }
+  .student-group:last-child { margin-bottom: 0; }
+
+  .student-group-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 0.5rem;
+  }
+
+  .student-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .student-list li {
+    font-size: 14.5px;
+    color: var(--ink2);
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .student-list li:last-child { border-bottom: none; }
+  .student-list a { color: var(--link); text-underline-offset: 3px; }
+
+  /* ─── Awards ──────────────────────────────────────────────────── */
+  .award-list { list-style: none; }
+
+  .award-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14.5px;
+    color: var(--ink2);
+  }
+
+  .award-item:last-child { border-bottom: none; }
+
+  .award-year {
+    font-size: 12px;
+    color: var(--ink3);
+    font-weight: 500;
+    padding-top: 2px;
+  }
+
+  /* ─── Teaching ────────────────────────────────────────────────── */
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .teaching-card {
+    background: white;
+    padding: 0.9rem 1.1rem;
+  }
+
+  .teaching-code {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+
+  .teaching-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+  }
+
+  .teaching-term { font-size: 12px; color: var(--ink3); }
+
+  /* ─── Service ─────────────────────────────────────────────────── */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .service-col h3 {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .service-list {
+    list-style: none;
+    font-size: 13.5px;
+    color: var(--ink2);
+  }
+
+  .service-list li { padding: 0.3rem 0; border-bottom: 1px solid var(--rule); }
+  .service-list li:last-child { border-bottom: none; }
+
+  /* ─── Footer ──────────────────────────────────────────────────── */
+  footer {
+    padding: 1.5rem 3.5rem;
+    border-top: 1px solid var(--rule);
+    font-size: 12.5px;
+    color: var(--ink3);
+    max-width: 760px;
+  }
+
+  footer a { color: var(--ink3); text-underline-offset: 3px; }
+
+  /* ─── Mobile ──────────────────────────────────────────────────── */
+  @media (max-width: 800px) {
+    body { flex-direction: column; }
+
+    .sidebar {
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      gap: 1rem;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sidebar-photo { width: 72px; height: 72px; margin: 0; }
+    .sidebar-nav   { display: none; }
+    .sidebar-hr    { display: none; }
+
+    .sidebar-name,
+    .sidebar-position,
+    .sidebar-location { text-align: left; }
+
+    .main-content { padding: 1.5rem; }
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <!-- populated by JS -->
+</aside>
+
+<div class="main-wrapper">
+  <main class="main-content" id="main-content">
+    <!-- populated by JS -->
+  </main>
+  <footer id="site-footer">
+    <!-- populated by JS -->
+  </footer>
+</div>
+
+
+<script>
+// ═══════════════════════════════════════════════════════════════════════════
+//
+//  SITE DATA
+//  ─────────
+//  This is the only section you need to edit to update your website.
+//
+//  • Add a news item   → add an object to SITE.news[]
+//  • Add a publication → add an object to the right group in SITE.publications[]
+//  • Add a student     → add an object to the right group in SITE.lab.students[]
+//  • Add a course      → add an object to SITE.teaching[]
+//  • Add an award      → add an object to SITE.awards[]
+//  • Add a service item→ add a string to the right column in SITE.service[]
+//
+// ═══════════════════════════════════════════════════════════════════════════
+
+const SITE = {
+
+  // ── Profile ─────────────────────────────────────────────────────────────
+  name:     "Lanyu (Lori) Xu",
+  nameHtml: "Lanyu<br>(Lori) Xu",   // line break for the large hero heading
+  title:    "Assistant Professor",
+  org:      "Oakland University",
+  photo:    "https://lori930.github.io/images/headshot-LX-2025.jpg",
+  location: "📍 Engineering Center 546 · 115 Library Drive · Rochester, MI",
+
+  // HTML is allowed here for links
+  bio: `I design, analyze, and build efficient <a href="#lab">edge AI</a> systems —
+    where intelligent perception runs close to the data, on the hardware that matters.
+    My work spans vision transformer efficiency and edge-optimized inference, applied to
+    autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
+    <br><br>
+    Ph.D. in Computer Science, <a href="https://wayne.edu" target="_blank">Wayne State University</a>
+    (advised by <a href="https://www.weisongshi.org/" target="_blank">Dr. Weisong Shi</a>).
+    B.S. in Computer Science, <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>.`,
+
+  // Profile link buttons  (label, href, icon emoji, external)
+  links: [
+    { label: "lxu@oakland.edu",  href: "mailto:lxu@oakland.edu",                                           icon: "✉" },
+    { label: "Google Scholar",   href: "https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ",     icon: "◎", external: true },
+    { label: "LinkedIn",         href: "https://www.linkedin.com/in/lanyuxu/",                             icon: "in", external: true },
+    { label: "Book",             href: "https://edgecomputingbook.org",                                    icon: "📖", external: true },
+    { label: "GitHub",           href: "https://github.com/lori930",                                       icon: "⌥", external: true },
+  ],
+
+
+  // ── News ────────────────────────────────────────────────────────────────
+  // Add newest items at the top. HTML is allowed in `text`.
+  news: [
+    {
+      date: "Apr 2026",
+      text: `We have two papers accepted at <strong>IEEE/ACM CHASE 2026</strong>. Congratulations to the team!`,
+    },
+    {
+      date: "Jan 2026",
+      text: `Paper <em>"Hilbert-Guided Sparse Local Attention"</em> accepted at <strong>ICLR 2026</strong>. Congratulations to Yunge!`,
+    },
+    {
+      date: "Jun 2025",
+      text: `Our smart vehicle team earned <strong>3rd place</strong> in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations Yunge &amp; Shaibal!`,
+    },
+    {
+      date: "May 2025",
+      text: `Book <a href="https://www.wiley.com/en-us/Edge+Computing%3A+Systems+and+Applications-p-9781394285839" target="_blank"><em>Edge Computing: Systems and Applications</em></a> is now available to pre-order from Wiley.`,
+    },
+    {
+      date: "Apr 2025",
+      text: `Fan Li honored with the <strong>2024 Outstanding Thesis Award</strong> at Oakland University!`,
+    },
+    {
+      date: "Jun 2024",
+      text: `Fan Li successfully defended her master's thesis: <em>"Swin Transformer-Based Multi-Task Model for Brain Tumor Analysis."</em>`,
+    },
+    {
+      date: "Jan 2024",
+      text: `Delivered invited talk <em>"The Practice of Edge Intelligence: Implementations and Insights"</em> at Wayne State University.`,
+    },
+  ],
+
+
+  // ── Publications ────────────────────────────────────────────────────────
+  // Each group has a `label` and an `entries` array.
+  // Entry fields:
+  //   title    – string (required)
+  //   badge    – short label shown as a green badge, e.g. "ICLR 2026" (optional)
+  //   authors  – string; your name will be auto-bolded (required)
+  //   venue    – string (required)
+  //   links    – array of { label, href } objects (optional)
+  publications: [
+    {
+      label: "Book",
+      entries: [
+        {
+          title:   "Edge Computing: Systems and Applications",
+          authors: "Lanyu Xu and Weisong Shi",
+          venue:   "Wiley, 2025",
+          links:   [{ label: "Website", href: "https://edgecomputingbook.org" }],
+        },
+      ],
+    },
+
+    {
+      label: "Recent Conference Papers",
+      entries: [
+        {
+          title:   "MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging",
+          badge:   "IEEE/ACM CHASE 2026",
+          authors: "Fan Li, Arun Iyengar, and Lanyu Xu",
+          venue:   "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026",
+        },
+        {
+          title:   "KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices",
+          badge:   "IEEE/ACM CHASE 2026",
+          authors: "Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and Lanyu Xu",
+          venue:   "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026",
+        },
+        {
+          title:   "Hilbert-Guided Sparse Local Attention",
+          badge:   "ICLR 2026",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "International Conference on Learning Representations (ICLR), 2026",
+        },
+        {
+          title:   "LightAD: A Lightweight Vision-Based Autonomous Driving System",
+          authors: "Yunge Li, Zhaodong Zhou, Shaibal Saha, Ali Irshayyid, Keer Chen, Lanyu Xu, and Jun Chen",
+          venue:   "IEEE MOST, 2026",
+        },
+        {
+          title:   "RepVal: A Skeleton-based Validation System for Functional Fitness Repetition on Edge Devices",
+          authors: "Lucas Alves, Fan Li, and Lanyu Xu",
+          venue:   "Workshop on Edge Intelligence @ ACM/IEEE SEC, 2025",
+          links:   [
+            { label: "Paper", href: "https://dl.acm.org/doi/10.1145/3769102.3774242" },
+            { label: "Code",  href: "https://github.com/lc-leonardo/RepVal" },
+          ],
+        },
+        {
+          title:   "ARMBench: Benchmarking Adversarial Robustness of Multitask Perception in Autonomous Driving",
+          authors: "Yunge Li, Yuhong Liu, and Lanyu Xu",
+          venue:   "ACM/IEEE Symposium on Edge Computing (SEC), 2025",
+          links:   [
+            { label: "Paper", href: "https://dl.acm.org/doi/10.1145/3769102.3770607" },
+            { label: "Code",  href: "https://github.com/Yunge6666/YOLOP-adversarial-attack-and-defense" },
+          ],
+        },
+        {
+          title:   "EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices",
+          authors: "Shaibal Saha and Lanyu Xu",
+          venue:   "T4V Workshop @ CVPRW, 2025",
+        },
+        {
+          title:   "The Architectural Implications of Multi-modal Detection Models for Autonomous Driving Systems",
+          authors: "Yunge Li, Shaibal Saha, and Lanyu Xu",
+          venue:   "IEEE MOST, 2024",
+          links:   [{ label: "Paper", href: "https://ieeexplore.ieee.org/document/10607110" }],
+        },
+      ],
+    },
+
+    {
+      label: "Journal Papers",
+      entries: [
+        {
+          title:   "Vision Transformers on the Edge: A Comprehensive Survey of Model Compression and Acceleration Strategies",
+          authors: "Shaibal Saha and Lanyu Xu",
+          venue:   "Neurocomputing, 2025",
+          links:   [{ label: "arXiv", href: "https://arxiv.org/abs/2503.02891" }],
+        },
+        {
+          title:   "Deep Reinforcement Learning and Its Applications in Medical Imaging and Radiation Therapy: A Survey",
+          authors: "Lanyu Xu, Simeng Zhu, and Ning Wen",
+          venue:   "Physics in Medicine &amp; Biology, 2022",
+          links:   [{ label: "Paper", href: "https://iopscience.iop.org/article/10.1088/1361-6560/ac9cb3" }],
+        },
+        {
+          title:   "NLUBroker: A QoE-driven Broker System for Natural Language Understanding Services",
+          authors: "Lanyu Xu, Arun Iyengar, and Weisong Shi",
+          venue:   "ACM Transactions on Internet Technology, 2022",
+          links:   [{ label: "Paper", href: "https://dl.acm.org/doi/abs/10.1145/3497807" }],
+        },
+        {
+          title:   "Edge Computing: Vision and Challenges",
+          authors: "Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, and Lanyu Xu",
+          venue:   "IEEE Internet of Things Journal, 2016",
+          links:   [{ label: "Paper", href: "https://ieeexplore.ieee.org/document/7488250" }],
+        },
+      ],
+    },
+
+    {
+      label: "Preprints",
+      entries: [
+        {
+          title:   "Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "arXiv:2512.22760, 2025",
+        },
+        {
+          title:   "A Systematic Review of Research on Large Language Models for Computer Programming Education",
+          authors: "Meina Zhu, Lanyu Xu, and Barbara Ericson",
+          venue:   "arXiv:2506.21818, 2025",
+          links:   [{ label: "arXiv", href: "https://arxiv.org/abs/2506.21818" }],
+        },
+        {
+          title:   "Panoptic Perception for Autonomous Driving: A Survey",
+          authors: "Yunge Li and Lanyu Xu",
+          venue:   "arXiv:2408.15388, 2024",
+          links:   [{ label: "arXiv", href: "https://www.arxiv.org/pdf/2408.15388" }],
+        },
+      ],
+    },
+  ],
+
+
+  // ── Lab ─────────────────────────────────────────────────────────────────
+  lab: {
+    intro: `The Edge Intelligent System Lab investigates how intelligent systems can perceive,
+      reason, and act at the edge of the network — where data is generated and latency matters.
+      Our research focuses on efficient AI model design and hardware-software co-design for
+      resource-constrained environments. We build systems that work: from transformer-based models
+      for autonomous driving perception and medical imaging, to edge-deployed AI judges for fitness
+      movement analysis. We are particularly interested in pushing what edge devices can do with
+      vision and decision-making, without sacrificing real-world usability.`,
+
+    // Student groups. Each member may have an optional `href` for their website.
+    students: [
+      {
+        group: "Ph.D. Students",
+        members: [
+          { name: "Shaibal Saha", href: "https://shaibal13.github.io", since: "Fall 2022–" },
+          { name: "Yunge Li",                                           since: "Winter 2023–" },
+          { name: "Fan Li",                                             since: "Winter 2023–" },
+        ],
+      },
+      {
+        group: "Master's Students",
+        members: [
+          { name: "Lucas Alves", since: "Fall 2024–" },
+        ],
+      },
+    ],
+  },
+
+
+  // ── Awards & Funding ────────────────────────────────────────────────────
+  awards: [
+    { year: "2025", text: "NSF EAGER Award, 2025–2027 (Co-PI)" },
+    { year: "2025", text: "Oakland University Research Committee Award (PI)" },
+    { year: "2023", text: "NSF CRII Award, 2023–2025 (PI)" },
+    { year: "2023", text: "NASA Michigan Space Grant Consortium Research Seed Grant, 2023–2024 (PI)" },
+    { year: "2023", text: "Oakland University Research Committee Award (PI)" },
+  ],
+
+
+  // ── Teaching ────────────────────────────────────────────────────────────
+  teaching: [
+    { code: "CSI 4110 / 5110", name: "Foundations of Edge AI",              term: "Fall 24, Fall 25, Win 26" },
+    { code: "CSI 3680",        name: "Script Programming",                  term: "Fall 23–25" },
+    { code: "CSI 4380",        name: "Game Programming",                    term: "Winter 22–25" },
+    { code: "CSI 5610",        name: "Advanced Data Structures &amp; Algorithms", term: "Winter 25" },
+    { code: "CSI 3660",        name: "System Administration",               term: "Fall 21–23" },
+  ],
+
+
+  // ── Service ─────────────────────────────────────────────────────────────
+  service: [
+    {
+      column: "Organizing Roles",
+      items: [
+        "Publication Co-Chair, SEC 2026",
+        "Publicity Co-Chair, SEC 2025",
+        "Publication Chair, MOST 2025",
+        "Publication Chair, MobiCom 2024",
+        "Publication Chair, IoTDI 2024",
+        "Student Travel Grant Chair, SEC 2023",
+        "Publication Chair, IoTDI 2023",
+        "Student Travel Grant Chair, SEC 2022",
+      ],
+    },
+    {
+      column: "Editorial Roles",
+      items: [
+        "Associate Editor, Smart Health (2025–)",
+        "Review Editor, Frontiers in HPC (2023–)",
+        "Editor, Journal of Edge Computing (2023–)",
+        "Editor, Journal of Ambient Intelligence (2022–)",
+        "Committee Member, NCWIT Aspirations in Computing (2021–)",
+      ],
+    },
+  ],
+
+}; // end SITE
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+//
+//  RENDER FUNCTIONS
+//  ─────────────────
+//  These turn the data above into HTML. You generally don't need to edit
+//  anything below this line.
+//
+// ═══════════════════════════════════════════════════════════════════════════
+
+/** Bold occurrences of the site owner's name in an author string. */
+function formatAuthors(str) {
+  return str.replace(/Lanyu\s+(?:\(Lori\)\s+)?Xu/g, '<strong>$&</strong>');
+}
+
+/** Render a single publication entry. */
+function renderPubEntry(entry) {
+  const badge   = entry.badge
+    ? `<span class="pub-badge">${entry.badge}</span>` : '';
+  const links   = (entry.links || []).map(l =>
+    `<a href="${l.href}" class="pub-link" target="_blank">${l.label}</a>`
+  ).join('');
+  const linksHtml = links ? `<div class="pub-links">${links}</div>` : '';
+
+  return `
+    <div class="pub-entry">
+      <p class="pub-title">${entry.title} ${badge}</p>
+      <p class="pub-authors">${formatAuthors(entry.authors)}</p>
+      <p class="pub-venue">${entry.venue}</p>
+      ${linksHtml}
+    </div>`;
+}
+
+/** Render the full page. */
+function renderSite() {
+  const S = SITE;
+
+  // ── Sidebar ────────────────────────────────────────────────────────────
+  const linkItems = S.links.map(l => {
+    const ext = l.external ? ' target="_blank" rel="noopener"' : '';
+    return `<li>
+      <a href="${l.href}"${ext}>
+        <span class="lnk-icon">${l.icon}</span>${l.label}
+      </a></li>`;
+  }).join('');
+
+  document.getElementById('sidebar').innerHTML = `
+    <img src="${S.photo}" alt="${S.name}" class="sidebar-photo" />
+    <p class="sidebar-name">${S.name}</p>
+    <p class="sidebar-position">
+      <strong>${S.title}</strong>
+      ${S.org}
+    </p>
+    <p class="sidebar-location">${S.location}</p>
+    <hr class="sidebar-hr" />
+    <ul class="sidebar-links">${linkItems}</ul>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Research</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#awards">Funding</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </nav>`;
+
+  // ── News ───────────────────────────────────────────────────────────────
+  const newsItems = S.news.map(n => `
+    <li class="news-item">
+      <span class="news-date">${n.date}</span>
+      <span class="news-text">${n.text}</span>
+    </li>`).join('');
+
+  // ── Publications ───────────────────────────────────────────────────────
+  const pubGroups = S.publications.map(group => `
+    <div class="pub-group">
+      <div class="pub-group-label">${group.label}</div>
+      ${group.entries.map(renderPubEntry).join('')}
+    </div>`).join('');
+
+  // ── Lab ────────────────────────────────────────────────────────────────
+  const studentGroups = S.lab.students.map(sg => {
+    const members = sg.members.map(m => {
+      const nameHtml = m.href
+        ? `<a href="${m.href}" target="_blank">${m.name}</a>` : m.name;
+      return `<li>${nameHtml} <span style="color:var(--ink3); font-size:12.5px;">— ${m.since}</span></li>`;
+    }).join('');
+    return `
+    <div class="student-group">
+      <p class="student-group-label">${sg.group}</p>
+      <ul class="student-list">${members}</ul>
+    </div>`;
+  }).join('');
+
+  // ── Awards ─────────────────────────────────────────────────────────────
+  const awardItems = S.awards.map(a => `
+    <li class="award-item">
+      <span class="award-year">${a.year}</span>
+      <span>${a.text}</span>
+    </li>`).join('');
+
+  // ── Teaching ───────────────────────────────────────────────────────────
+  const teachingCards = S.teaching.map(c => `
+    <div class="teaching-card">
+      <p class="teaching-code">${c.code}</p>
+      <p class="teaching-name">${c.name}</p>
+      <p class="teaching-term">${c.term}</p>
+    </div>`).join('');
+
+  // ── Service ────────────────────────────────────────────────────────────
+  const serviceCols = S.service.map(col => {
+    const items = col.items.map(i => `<li>${i}</li>`).join('');
+    return `
+    <div class="service-col">
+      <h3>${col.column}</h3>
+      <ul class="service-list">${items}</ul>
+    </div>`;
+  }).join('');
+
+  // ── Assemble main ──────────────────────────────────────────────────────
+  document.getElementById('main-content').innerHTML = `
+
+    <section id="about">
+      <p class="section-label">About</p>
+      <p class="about-text">${S.bio}</p>
+    </section>
+
+    <section id="news">
+      <p class="section-label">News</p>
+      <ul class="news-list">${newsItems}</ul>
+    </section>
+
+    <section id="publications">
+      <p class="section-label">Research &amp; Publications</p>
+      ${pubGroups}
+    </section>
+
+    <section id="lab">
+      <p class="section-label">Edge Intelligent System Lab</p>
+      <p class="lab-intro">${S.lab.intro}</p>
+      ${studentGroups}
+    </section>
+
+    <section id="awards">
+      <p class="section-label">Awards &amp; Funding</p>
+      <ul class="award-list">${awardItems}</ul>
+    </section>
+
+    <section id="teaching">
+      <p class="section-label">Teaching</p>
+      <div class="teaching-grid">${teachingCards}</div>
+    </section>
+
+    <section id="service">
+      <p class="section-label">Service</p>
+      <div class="service-grid">${serviceCols}</div>
+    </section>`;
+
+  // ── Footer ─────────────────────────────────────────────────────────────
+  document.getElementById('site-footer').innerHTML = `
+    <p>${S.name} · ${S.org} · <a href="mailto:lxu@oakland.edu">lxu@oakland.edu</a></p>`;
+}
+
+renderSite();
+</script>
+</body>
+</html>
