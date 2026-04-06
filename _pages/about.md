@@ -21,16 +21,29 @@ I design, analyze, and build efficient **edge AI** systems — where intelligent
 
 I am an Assistant Professor of Computer Science at [Oakland University](https://www.oakland.edu) (Engineering Center 546, 115 Library Drive, Rochester, MI). I received my Ph.D. in Computer Science from [Wayne State University](https://wayne.edu), advised by [Dr. Weisong Shi](https://www.weisongshi.org/), and my B.S. in Computer Science from [Tongji University](https://www.tongji.edu.cn/).
 
-I am the co-author of the textbook [*Edge Computing: Systems and Applications*](https://edgecomputingbook.org) (Wiley, 2025).
+<!-- I am the co-author of the textbook [*Edge Computing: Systems and Applications*](https://edgecomputingbook.org) (Wiley, 2025). -->
+
+# 🖥️ Lab — Edge Intelligent System Lab
+
+The Edge Intelligent System Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments.
+
+**Ph.D. Students**
+- [Shaibal Saha](https://shaibal13.github.io) (Fall 2022–)
+- Yunge Li (Winter 2023–)
+- Fan Li (Winter 2023–)
+
+**Master's Students**
+- Lucas Alves (Fall 2024–)
 
 
 # 🔥 News
 
 - *2026.04*: &nbsp;🎉 Two papers accepted at **IEEE/ACM CHASE 2026**. Congratulations to the team!
+- *2026.01*: &nbsp;🎉 Paper *"Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers"* accepted at **IJCNN 2026**. Congratulations to Yunge!
 - *2026.01*: &nbsp;🎉 Paper *"Hilbert-Guided Sparse Local Attention"* accepted at **ICLR 2026**. Congratulations to Yunge!
-- *2025.06*: &nbsp;🏆 Our smart vehicle team earned **3rd place** in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations Yunge & Shaibal!
+- *2025.06*: &nbsp;🏆 Our smart vehicle team earned **3rd place** in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations to Yunge & Shaibal!
 - *2025.05*: &nbsp;📖 Book [*Edge Computing: Systems and Applications*](https://www.wiley.com/en-us/Edge+Computing%3A+Systems+and+Applications-p-9781394285839) is now available to pre-order from Wiley.
-- *2025.04*: &nbsp;🏅 Fan Li honored with the **2024 Outstanding Thesis Award** at Oakland University!
+- *2025.04*: &nbsp;🏅 Fan Li honored with the **2024 Outstanding Thesis Award** at Oakland University! Congratulations to Fan!
 - *2024.06*: Fan Li successfully defended her master's thesis: *"Swin Transformer-Based Multi-Task Model for Brain Tumor Analysis."*
 - *2024.01*: Delivered invited talk *"The Practice of Edge Intelligence: Implementations and Insights"* at Wayne State University.
 
@@ -52,7 +65,11 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 
 - **KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices**  \\
   Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and **Lanyu Xu** \\
-  *IEEE/ACM Conference on Connected Health, 2026*
+  *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026*
+
+- **Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers** \\
+  Yunge Li and **Lanyu Xu** \\
+  *IEEE/INNS IJCNN, 2026*
 
 - **Hilbert-Guided Sparse Local Attention** \\
   Yunge Li and **Lanyu Xu** \\
@@ -72,11 +89,11 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 
 - **EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices** \\
   Shaibal Saha and **Lanyu Xu** \\
-  *T4V Workshop @ CVPRW, 2025*
+  *T4V Workshop @ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025*
 
 - **The Architectural Implications of Multi-modal Detection Models for Autonomous Driving Systems** \\
   Yunge Li, Shaibal Saha, and **Lanyu Xu** \\
-  *IEEE MOST, 2024* \| [Paper](https://ieeexplore.ieee.org/document/10607110)
+  *IEEE International Conference on Mobility: Operations, Services, and Technologies (MOST), 2024* \| [Paper](https://ieeexplore.ieee.org/document/10607110)
 
 ## Journal Papers
 
@@ -120,7 +137,7 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 - *2023* Oakland University Research Committee Award (PI)
 
 
-# 📖 Education
+# 📖 Educations
 
 - *2016 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/))
 - *2012 – 2016*, B.S. in Computer Science, [Tongji University](https://www.tongji.edu.cn/)
@@ -137,17 +154,6 @@ I am the co-author of the textbook [*Edge Computing: Systems and Applications*](
 | CSI 5610 | Advanced Data Structures & Algorithms | Winter 25, Summer 26 |
 
 
-# 🖥️ Lab — Edge Intelligent System Lab
-
-The Edge Intelligent System Lab investigates how intelligent systems can perceive, reason, and act at the edge of the network — where data is generated and latency matters. Our research focuses on efficient AI model design and hardware-software co-design for resource-constrained environments.
-
-**Ph.D. Students**
-- [Shaibal Saha](https://shaibal13.github.io) (Fall 2022–)
-- Yunge Li (Winter 2023–)
-- Fan Li (Winter 2023–)
-
-**Master's Students**
-- Lucas Alves (Fall 2024–)
 
 
 # 📂 Service
