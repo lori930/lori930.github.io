@@ -12,18 +12,18 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --serif: 'EB Garamond', Georgia, serif;
-    --sans: 'DM Sans', system-ui, sans-serif;
-    --ink: #1a1a18;
-    --ink2: #4a4a44;
-    --ink3: #888880;
-    --rule: #e0ddd6;
-    --bg: #fafaf7;
-    --accent: #2d5a3d;
+    --serif:        'EB Garamond', Georgia, serif;
+    --sans:         'DM Sans', system-ui, sans-serif;
+    --ink:          #1a1a18;
+    --ink2:         #4a4a44;
+    --ink3:         #888880;
+    --rule:         #e0ddd6;
+    --bg:           #fafaf7;
+    --sidebar-bg:   #f2f0eb;
+    --accent:       #2d5a3d;
     --accent-light: #e8f0eb;
-    --link: #1a3f5c;
-    --max: 860px;
-    --pad: clamp(1.5rem, 5vw, 3rem);
+    --link:         #1a3f5c;
+    --sidebar-w:    268px;
   }
 
   html { scroll-behavior: smooth; }
@@ -35,69 +35,154 @@
     color: var(--ink);
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    min-height: 100vh;
   }
 
-  /* ─── Nav ────────────────────────────────────────────────────────── */
-  nav {
+  /* ─── Sidebar ─────────────────────────────────────────────────── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--rule);
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(250,250,247,0.94);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--rule);
+    height: 100vh;
+    overflow-y: auto;
+    padding: 2.5rem 1.75rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    scrollbar-width: none;
+  }
+  .sidebar::-webkit-scrollbar { display: none; }
+
+  .sidebar-photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(5%);
+    border: 3px solid var(--rule);
   }
 
-  .nav-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 var(--pad);
+  .sidebar-name {
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar-position {
+    font-size: 12.5px;
+    color: var(--ink2);
+    text-align: center;
+    line-height: 1.6;
+    margin-top: -0.5rem;
+  }
+
+  .sidebar-position strong {
+    display: block;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .sidebar-hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sidebar-location {
+    font-size: 12px;
+    color: var(--ink3);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Contact / social links */
+  .sidebar-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .sidebar-links a {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 52px;
-  }
-
-  .nav-name {
-    font-family: var(--serif);
-    font-size: 17px;
-    color: var(--ink);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.75rem;
-    list-style: none;
-  }
-
-  .nav-links a {
+    gap: 9px;
     font-size: 13px;
-    font-weight: 400;
     color: var(--ink2);
     text-decoration: none;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
+    padding: 3px 0;
     transition: color 0.15s;
   }
 
-  .nav-links a:hover { color: var(--accent); }
+  .sidebar-links a:hover { color: var(--accent); }
 
-  /* ─── Main layout ────────────────────────────────────────────────── */
-  main {
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 0 var(--pad);
+  .sidebar-links .lnk-icon {
+    width: 18px;
+    text-align: center;
+    font-size: 13px;
+    flex-shrink: 0;
+    color: var(--ink3);
+  }
+
+  /* Section nav */
+  .sidebar-nav {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .sidebar-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .sidebar-nav a {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.15s;
+  }
+
+  .sidebar-nav a:hover { color: var(--accent); }
+
+  /* ─── Main wrapper ────────────────────────────────────────────── */
+  .main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .main-content {
+    flex: 1;
+    max-width: 760px;
+    padding: 3.5rem 3.5rem 2rem;
   }
 
   section {
-    padding: 4rem 0;
+    padding: 2.75rem 0;
     border-bottom: 1px solid var(--rule);
   }
 
   section:last-child { border-bottom: none; }
 
-  /* ─── Section headings ───────────────────────────────────────────── */
+  /* ─── Section labels ──────────────────────────────────────────── */
   .section-label {
     font-family: var(--sans);
     font-size: 11px;
@@ -105,122 +190,31 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--ink3);
-    margin-bottom: 2.5rem;
-  }
-
-  h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    font-weight: 400;
-    color: var(--ink);
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--ink);
-    margin-bottom: 0.25rem;
-  }
-
-  /* ─── Hero ───────────────────────────────────────────────────────── */
-  #hero {
-    padding: 5rem 0 4rem;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--rule);
   }
 
-  .hero-text { max-width: 560px; }
-
-  .hero-eyebrow {
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-
-  .hero-name {
-    font-family: var(--serif);
-    font-size: clamp(2.4rem, 6vw, 3.4rem);
-    font-weight: 400;
-    line-height: 1.15;
-    color: var(--ink);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .hero-bio {
+  /* ─── About ───────────────────────────────────────────────────── */
+  .about-text {
     font-size: 15.5px;
     color: var(--ink2);
-    line-height: 1.75;
-    margin-bottom: 2rem;
+    line-height: 1.85;
   }
 
-  .hero-bio a {
+  .about-text a {
     color: var(--link);
-    text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .hero-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .hero-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 13px;
-    color: var(--ink2);
-    text-decoration: none;
-    padding: 5px 12px;
-    border: 1px solid var(--rule);
-    border-radius: 40px;
-    background: white;
-    transition: all 0.15s;
-  }
-
-  .hero-link:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-light);
-  }
-
-  .hero-photo {
-    width: 160px;
-    height: 160px;
-    border-radius: 4px;
-    object-fit: cover;
-    filter: grayscale(8%);
-    flex-shrink: 0;
-  }
-
-  .hero-meta {
-    margin-top: 1.5rem;
-    font-size: 13px;
-    color: var(--ink3);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  /* ─── News ───────────────────────────────────────────────────────── */
+  /* ─── News ────────────────────────────────────────────────────── */
   .news-list { list-style: none; }
 
   .news-item {
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 76px 1fr;
     gap: 1rem;
-    padding: 0.9rem 0;
+    padding: 0.8rem 0;
     border-bottom: 1px solid var(--rule);
     font-size: 14.5px;
   }
@@ -236,11 +230,11 @@
   }
 
   .news-text { color: var(--ink2); line-height: 1.6; }
-
   .news-text a { color: var(--link); text-underline-offset: 3px; }
 
-  /* ─── Publications ───────────────────────────────────────────────── */
-  .pub-group { margin-bottom: 3rem; }
+  /* ─── Publications ────────────────────────────────────────────── */
+  .pub-group { margin-bottom: 2.5rem; }
+  .pub-group:last-child { margin-bottom: 0; }
 
   .pub-group-label {
     font-size: 11px;
@@ -248,13 +242,13 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ink3);
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--rule);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
   }
 
   .pub-entry {
-    padding: 1rem 0;
+    padding: 0.9rem 0;
     border-bottom: 1px dotted var(--rule);
   }
 
@@ -263,7 +257,7 @@
   .pub-title {
     font-family: var(--serif);
     font-size: 1.0rem;
-    line-height: 1.4;
+    line-height: 1.45;
     color: var(--ink);
     font-weight: 500;
     margin-bottom: 0.2rem;
@@ -272,14 +266,14 @@
   .pub-authors {
     font-size: 13px;
     color: var(--ink3);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.15rem;
   }
 
   .pub-venue {
     font-size: 13px;
     color: var(--ink2);
     font-style: italic;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.3rem;
   }
 
   .pub-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
@@ -308,49 +302,16 @@
     vertical-align: middle;
   }
 
-  /* ─── Teaching ───────────────────────────────────────────────────── */
-  .teaching-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    overflow: hidden;
-  }
-
-  .teaching-card {
-    background: white;
-    padding: 1rem 1.25rem;
-  }
-
-  .teaching-code {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.2rem;
-  }
-
-  .teaching-name {
-    font-family: var(--serif);
-    font-size: 1rem;
-    color: var(--ink);
-    margin-bottom: 0.15rem;
-  }
-
-  .teaching-term { font-size: 12.5px; color: var(--ink3); }
-
-  /* ─── Lab ────────────────────────────────────────────────────────── */
+  /* ─── Lab ─────────────────────────────────────────────────────── */
   .lab-intro {
     font-size: 15px;
     color: var(--ink2);
-    line-height: 1.75;
-    margin-bottom: 2.5rem;
-    max-width: 640px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
   }
 
-  .student-group { margin-bottom: 2rem; }
+  .student-group { margin-bottom: 1.75rem; }
+  .student-group:last-child { margin-bottom: 0; }
 
   .student-group-label {
     font-size: 12px;
@@ -358,27 +319,34 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink3);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
-  .student-list { list-style: none; display: flex; flex-direction: column; gap: 0.25rem; }
+  .student-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
 
   .student-list li {
     font-size: 14.5px;
     color: var(--ink2);
-    padding: 0.3rem 0;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--rule);
   }
 
+  .student-list li:last-child { border-bottom: none; }
   .student-list a { color: var(--link); text-underline-offset: 3px; }
 
-  /* ─── Awards ─────────────────────────────────────────────────────── */
+  /* ─── Awards ──────────────────────────────────────────────────── */
   .award-list { list-style: none; }
 
   .award-item {
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 50px 1fr;
     gap: 1rem;
-    padding: 0.75rem 0;
+    padding: 0.7rem 0;
     border-bottom: 1px solid var(--rule);
     font-size: 14.5px;
     color: var(--ink2);
@@ -393,7 +361,40 @@
     padding-top: 2px;
   }
 
-  /* ─── Service ────────────────────────────────────────────────────── */
+  /* ─── Teaching ────────────────────────────────────────────────── */
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .teaching-card {
+    background: white;
+    padding: 0.9rem 1.1rem;
+  }
+
+  .teaching-code {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.2rem;
+  }
+
+  .teaching-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+  }
+
+  .teaching-term { font-size: 12px; color: var(--ink3); }
+
+  /* ─── Service ─────────────────────────────────────────────────── */
   .service-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -402,12 +403,14 @@
 
   .service-col h3 {
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink3);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
   }
 
   .service-list {
@@ -419,41 +422,62 @@
   .service-list li { padding: 0.3rem 0; border-bottom: 1px solid var(--rule); }
   .service-list li:last-child { border-bottom: none; }
 
-  /* ─── Footer ─────────────────────────────────────────────────────── */
+  /* ─── Footer ──────────────────────────────────────────────────── */
   footer {
+    padding: 1.5rem 3.5rem;
     border-top: 1px solid var(--rule);
-    padding: 2rem var(--pad);
-    text-align: center;
     font-size: 12.5px;
     color: var(--ink3);
-    max-width: var(--max);
-    margin: 0 auto;
+    max-width: 760px;
   }
 
-  /* ─── Mobile ─────────────────────────────────────────────────────── */
-  @media (max-width: 600px) {
-    #hero { grid-template-columns: 1fr; }
-    .hero-photo { width: 120px; height: 120px; }
+  footer a { color: var(--ink3); text-underline-offset: 3px; }
+
+  /* ─── Mobile ──────────────────────────────────────────────────── */
+  @media (max-width: 800px) {
+    body { flex-direction: column; }
+
+    .sidebar {
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      gap: 1rem;
+      border-right: none;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .sidebar-photo { width: 72px; height: 72px; margin: 0; }
+    .sidebar-nav   { display: none; }
+    .sidebar-hr    { display: none; }
+
+    .sidebar-name,
+    .sidebar-position,
+    .sidebar-location { text-align: left; }
+
+    .main-content { padding: 1.5rem; }
     .service-grid { grid-template-columns: 1fr; }
-    .nav-links { gap: 1rem; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner" id="nav-inner">
+<aside class="sidebar" id="sidebar">
+  <!-- populated by JS -->
+</aside>
+
+<div class="main-wrapper">
+  <main class="main-content" id="main-content">
     <!-- populated by JS -->
-  </div>
-</nav>
-
-<main id="main-content">
-  <!-- populated by JS -->
-</main>
-
-<footer id="site-footer">
-  <!-- populated by JS -->
-</footer>
+  </main>
+  <footer id="site-footer">
+    <!-- populated by JS -->
+  </footer>
+</div>
 
 
 <script>
@@ -477,7 +501,8 @@ const SITE = {
   // ── Profile ─────────────────────────────────────────────────────────────
   name:     "Lanyu (Lori) Xu",
   nameHtml: "Lanyu<br>(Lori) Xu",   // line break for the large hero heading
-  title:    "Assistant Professor · Oakland University",
+  title:    "Assistant Professor",
+  org:      "Oakland University",
   photo:    "https://lori930.github.io/images/headshot-LX-2025.jpg",
   location: "📍 Engineering Center 546 · 115 Library Drive · Rochester, MI",
 
@@ -491,12 +516,13 @@ const SITE = {
     (advised by <a href="https://www.weisongshi.org/" target="_blank">Dr. Weisong Shi</a>).
     B.S. in Computer Science, <a href="https://www.tongji.edu.cn/" target="_blank">Tongji University</a>.`,
 
-  // Profile link buttons
+  // Profile link buttons  (label, href, icon emoji, external)
   links: [
-    { label: "✉ Email",        href: "mailto:lxu@oakland.edu" },
-    { label: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ", external: true },
-    { label: "LinkedIn",       href: "https://www.linkedin.com/in/lanyuxu/", external: true },
-    { label: "Book",           href: "https://edgecomputingbook.org", external: true },
+    { label: "lxu@oakland.edu",  href: "mailto:lxu@oakland.edu",                                           icon: "✉" },
+    { label: "Google Scholar",   href: "https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ",     icon: "◎", external: true },
+    { label: "LinkedIn",         href: "https://www.linkedin.com/in/lanyuxu/",                             icon: "in", external: true },
+    { label: "Book",             href: "https://edgecomputingbook.org",                                    icon: "📖", external: true },
+    { label: "GitHub",           href: "https://github.com/lori930",                                       icon: "⌥", external: true },
   ],
 
 
@@ -759,22 +785,21 @@ const SITE = {
 
 /** Bold occurrences of the site owner's name in an author string. */
 function formatAuthors(str) {
-  // Match "Lanyu Xu" with optional middle name/initial and surrounding context
   return str.replace(/Lanyu\s+(?:\(Lori\)\s+)?Xu/g, '<strong>$&</strong>');
 }
 
 /** Render a single publication entry. */
 function renderPubEntry(entry) {
-  const badge  = entry.badge
-    ? ` <span class="pub-badge">${entry.badge}</span>` : '';
-  const links  = (entry.links || []).map(l =>
+  const badge   = entry.badge
+    ? `<span class="pub-badge">${entry.badge}</span>` : '';
+  const links   = (entry.links || []).map(l =>
     `<a href="${l.href}" class="pub-link" target="_blank">${l.label}</a>`
   ).join('');
   const linksHtml = links ? `<div class="pub-links">${links}</div>` : '';
 
   return `
     <div class="pub-entry">
-      <p class="pub-title">${entry.title}${badge}</p>
+      <p class="pub-title">${entry.title} ${badge}</p>
       <p class="pub-authors">${formatAuthors(entry.authors)}</p>
       <p class="pub-venue">${entry.venue}</p>
       ${linksHtml}
@@ -785,22 +810,36 @@ function renderPubEntry(entry) {
 function renderSite() {
   const S = SITE;
 
-  // ── Nav ────────────────────────────────────────────────────────────────
-  document.getElementById('nav-inner').innerHTML = `
-    <a href="#hero" class="nav-name">${S.name}</a>
-    <ul class="nav-links">
-      <li><a href="#news">News</a></li>
-      <li><a href="#publications">Research</a></li>
-      <li><a href="#lab">Lab</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-      <li><a href="#service">Service</a></li>
-    </ul>`;
+  // ── Sidebar ────────────────────────────────────────────────────────────
+  const linkItems = S.links.map(l => {
+    const ext = l.external ? ' target="_blank" rel="noopener"' : '';
+    return `<li>
+      <a href="${l.href}"${ext}>
+        <span class="lnk-icon">${l.icon}</span>${l.label}
+      </a></li>`;
+  }).join('');
 
-  // ── Hero ───────────────────────────────────────────────────────────────
-  const heroLinks = S.links.map(l => {
-    const ext = l.external ? ' target="_blank"' : '';
-    return `<a href="${l.href}" class="hero-link"${ext}>${l.label}</a>`;
-  }).join('\n      ');
+  document.getElementById('sidebar').innerHTML = `
+    <img src="${S.photo}" alt="${S.name}" class="sidebar-photo" />
+    <p class="sidebar-name">${S.name}</p>
+    <p class="sidebar-position">
+      <strong>${S.title}</strong>
+      ${S.org}
+    </p>
+    <p class="sidebar-location">${S.location}</p>
+    <hr class="sidebar-hr" />
+    <ul class="sidebar-links">${linkItems}</ul>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Research</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#awards">Funding</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+    </nav>`;
 
   // ── News ───────────────────────────────────────────────────────────────
   const newsItems = S.news.map(n => `
@@ -821,7 +860,7 @@ function renderSite() {
     const members = sg.members.map(m => {
       const nameHtml = m.href
         ? `<a href="${m.href}" target="_blank">${m.name}</a>` : m.name;
-      return `<li>${nameHtml} — ${m.since}</li>`;
+      return `<li>${nameHtml} <span style="color:var(--ink3); font-size:12.5px;">— ${m.since}</span></li>`;
     }).join('');
     return `
     <div class="student-group">
@@ -858,17 +897,9 @@ function renderSite() {
   // ── Assemble main ──────────────────────────────────────────────────────
   document.getElementById('main-content').innerHTML = `
 
-    <section id="hero">
-      <div class="hero-text">
-        <p class="hero-eyebrow">${S.title}</p>
-        <h1 class="hero-name">${S.nameHtml}</h1>
-        <p class="hero-bio">${S.bio}</p>
-        <div class="hero-links">
-          ${heroLinks}
-        </div>
-        <p class="hero-meta">${S.location}</p>
-      </div>
-      <img src="${S.photo}" alt="${S.name}" class="hero-photo" />
+    <section id="about">
+      <p class="section-label">About</p>
+      <p class="about-text">${S.bio}</p>
     </section>
 
     <section id="news">
@@ -904,7 +935,7 @@ function renderSite() {
 
   // ── Footer ─────────────────────────────────────────────────────────────
   document.getElementById('site-footer').innerHTML = `
-    <p>${S.name} · Oakland University · <a href="mailto:lxu@oakland.edu" style="color:var(--ink3)">lxu@oakland.edu</a></p>`;
+    <p>${S.name} · ${S.org} · <a href="mailto:lxu@oakland.edu">lxu@oakland.edu</a></p>`;
 }
 
 renderSite();
