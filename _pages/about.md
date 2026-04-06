@@ -87,7 +87,7 @@ The Edge Intelligent System Lab investigates how intelligent systems can perceiv
   Yunge Li, Yuhong Liu, and **Lanyu Xu** \\
   *ACM/IEEE Symposium on Edge Computing (SEC), 2025* \| [Paper](https://dl.acm.org/doi/10.1145/3769102.3770607) \| [Code](https://github.com/Yunge6666/YOLOP-adversarial-attack-and-defense)
 
-- **EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices** \\
+- **EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices** (✨Highlight Paper)\\
   Shaibal Saha and **Lanyu Xu** \\
   *T4V Workshop @ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025*
 
