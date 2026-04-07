@@ -38,8 +38,8 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 # 🔥 News
 
-- *2026.04*: &nbsp;🎉 Two papers accepted at **IEEE/ACM CHASE 2026**. Congratulations to the team!
-- *2026.01*: &nbsp;🎉 Paper *"Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers"* accepted at **IJCNN 2026**. Congratulations to Yunge!
+- *2026.04*: &nbsp;🎉 Two papers have been accepted at **IEEE/ACM CHASE 2026**. Congratulations to the team!
+- *2026.03*: &nbsp;🎉 Paper *"Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers"* accepted at **IJCNN 2026**. Congratulations to Yunge!
 - *2026.01*: &nbsp;🎉 Paper *"Hilbert-Guided Sparse Local Attention"* accepted at **ICLR 2026**. Congratulations to Yunge!
 - *2025.06*: &nbsp;🏆 Our smart vehicle team earned **3rd place** in the Self-Drive Challenge at the 32nd Intelligent Ground Vehicle Competition (IGVC). Congratulations to Yunge & Shaibal!
 - *2025.05*: &nbsp;📖 Book [*Edge Computing: Systems and Applications*](https://www.wiley.com/en-us/Edge+Computing%3A+Systems+and+Applications-p-9781394285839) is now available to pre-order from Wiley.
