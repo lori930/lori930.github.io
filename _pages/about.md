@@ -48,7 +48,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 - *2024.01*: Delivered invited talk *"The Practice of Edge Intelligence: Implementations and Insights"* at Wayne State University.
 
 
-# 📝 Publications
+# 📝 Recent Publications
 👓 [Full publication list](https://scholar.google.com/citations?hl=en&user=i2S3ohMAAAAJ&view_op=list_works&sortby=pubdate) 👓
 
 ## Book
@@ -57,7 +57,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
   **Lanyu Xu** and Weisong Shi \\
   *Wiley, 2025* \| [Website](https://edgecomputingbook.org)
 
-## Selected Conference Papers
+## Conference Papers
 
 - **MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging** \\
   Fan Li, Arun Iyengar, and **Lanyu Xu** \\
