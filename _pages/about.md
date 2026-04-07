@@ -61,11 +61,11 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 - **MTMed3D: A Multi-Task Transformer-Based Model for 3D Medical Imaging** \\
   Fan Li, Arun Iyengar, and **Lanyu Xu** \\
-  *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026*
+  *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2026*
 
 - **KD-Judge: A Knowledge-Driven Automated Judge Framework for Functional Fitness Movements on Edge Devices**  \\
   Shaibal Saha, Fan Li, Yunge Li, Arun Iyengar, Lucas Alves, and **Lanyu Xu** \\
-  *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies, 2026*
+  *IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2026*
 
 - **Neighbor-Aware Token Reduction via Hilbert Curve for Vision Transformers** \\
   Yunge Li and **Lanyu Xu** \\
@@ -77,7 +77,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 - **LightAD: A Lightweight Vision-Based Autonomous Driving System** \\
   Yunge Li, Zhaodong Zhou, Shaibal Saha, Ali Irshayyid, Keer Chen, **Lanyu Xu**, and Jun Chen \\
-  *IEEE MOST, 2026*
+  *IEEE International Conference on Mobility: Operations, Services, and Technologies (MOST), 2026*
 
 - **RepVal: A Skeleton-based Validation System for Functional Fitness Repetition on Edge Devices** \\
   Lucas Alves, Fan Li, and **Lanyu Xu** \\
@@ -139,8 +139,8 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 # 📖 Educations
 
-- *2016 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/))
-- *2012 – 2016*, B.S. in Computer Science, [Tongji University](https://www.tongji.edu.cn/)
+- *2015 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/))
+- *2011 – 2015*, B.S. in Computer Science, [Tongji University](https://www.tongji.edu.cn/)
 
 
 # 🧑‍🏫 Teaching
