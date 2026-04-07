@@ -73,7 +73,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 - **Hilbert-Guided Sparse Local Attention** \\
   Yunge Li and **Lanyu Xu** \\
-  *International Conference on Learning Representations (ICLR), 2026*
+  *International Conference on Learning Representations (ICLR), 2026* 
 
 - **LightAD: A Lightweight Vision-Based Autonomous Driving System** \\
   Yunge Li, Zhaodong Zhou, Shaibal Saha, Ali Irshayyid, Keer Chen, **Lanyu Xu**, and Jun Chen \\
@@ -89,7 +89,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 - **EfficientQuant: An Efficient Post-Training Quantization for CNN-Transformer Hybrid Models on Edge Devices** (✨Highlight Paper)\\
   Shaibal Saha and **Lanyu Xu** \\
-  *T4V Workshop @ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025*
+  *T4V Workshop @ IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2025* \| [Paper](https://drive.google.com/file/d/1IgJm4RmceoyaK-tIDQoAmBrMqE4KBqDC/view) \| [Poster](https://drive.google.com/file/d/1f5pYFyBDl3Htaa-x9rlv5RvQ752zpPLb/view)
 
 - **The Architectural Implications of Multi-modal Detection Models for Autonomous Driving Systems** \\
   Yunge Li, Shaibal Saha, and **Lanyu Xu** \\
