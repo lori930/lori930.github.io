@@ -109,7 +109,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
   **Lanyu Xu**, Arun Iyengar, and Weisong Shi \\
   *ACM Transactions on Internet Technology, 2022* \| [Paper](https://dl.acm.org/doi/abs/10.1145/3497807)
 
-- **Edge Computing: Vision and Challenges** \\
+- **Edge Computing: Vision and Challenges** (✨10,000+ Citations)\\
   Weisong Shi, Jie Cao, Quan Zhang, Youhuizi Li, and **Lanyu Xu** \\
   *IEEE Internet of Things Journal, 2016* \| [Paper](https://ieeexplore.ieee.org/document/7488250)
 
