@@ -139,7 +139,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 # 📖 Educations
 
-- *2015 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/)), M.S. in Computer Science awarded in 2020
+- *2015 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/)), M.S. in Computer Science awarded in 2020.
 - *2011 – 2015*, B.S. in Computer Science, [Tongji University](https://www.tongji.edu.cn/)
 
 
