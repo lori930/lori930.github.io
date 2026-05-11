@@ -36,7 +36,9 @@ author_profile: true
         </a>
       </div>
     </div>
-    <div class="tl-caption">The MIST/CARLAB Family Gathering</div>
+  </div>
+  <div class="tl-body">
+  <div class="tl-caption">The MIST/CARLAB Family Gathering</div>
       <div class="tl-photos single popup-group">
         <a href="/images/gallery/MOST2026-Gathering.jpg">
           <img src="/images/gallery/MOST2026-Gathering.jpg" alt="IEEE MOST 2026 presentation">
