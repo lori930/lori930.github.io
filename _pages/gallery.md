@@ -133,6 +133,27 @@ author_profile: true
     </div>
   </div>
 
+  <!-- ── 2025 · Fan  ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">May<br>2025</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">Outstanding Thesis Award</div>
+      <div class="tl-caption">Congradulations to Fan!</div>
+      <div class="tl-photos multi popup-group">
+      <!-- <div class="tl-photos single popup-group"> -->
+        <a href="/images/gallery/Fan2025-OutstandingAward.jpg">
+          <img src="/images/gallery/Fan2025-OutstandingAward.jpg" alt="Award 2025">
+        </a>
+        <a href="/images/gallery/Fan2025-Ceremony.jpg">
+          <img src="/images/gallery/Fan2025-Ceremony.jpg" alt="Award 2025">
+        </a>
+        <!-- <a href="/images/gallery/gathering-2025-3.jpg">
+          <img src="/images/gallery/gathering-2025-3.jpg" alt="Lab gathering 2025">
+        </a> -->
+      </div>
+    </div>
+  </div>
 
   <!-- ── 2024 · Lab Gathering ──────────────────────────── -->
   <div class="tl-item">
