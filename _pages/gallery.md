@@ -119,8 +119,37 @@ author_profile: true
   </div>
 
 
+  <!-- ── 2024 · Lab Gathering ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Nov<br>2024</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">Lab Gathering</div>
+      <div class="tl-caption">Thanksgiving Dinner</div>
+      <!-- <div class="tl-photos multi popup-group"> -->
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/EIS2024-Thanksgiving.jpg">
+          <img src="/images/gallery/EIS2024-Thanksgiving.jpg" alt="Lab gathering 2024">
+        </a>
+      </div>
+    </div>
+  </div>
 
-
+  <!-- ── 2023 · Lab Gathering ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Nov<br>2023</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">Lab Gathering</div>
+      <div class="tl-caption">Thanksgiving Dinner</div>
+      <!-- <div class="tl-photos multi popup-group"> -->
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/EIS2023-Thanksgiving.jpg">
+          <img src="/images/gallery/EIS2023-Thanksgiving.jpg" alt="Lab gathering 2023">
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- ── ADD MORE EVENTS ABOVE THIS LINE ───────────────── -->
 
