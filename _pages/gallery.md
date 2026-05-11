@@ -1,4 +1,5 @@
 ---
+layout: default
 permalink: /gallery/
 title: "Lab Gallery"
 author_profile: true
