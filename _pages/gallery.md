@@ -135,6 +135,20 @@ author_profile: true
     </div>
   </div>
 
+  <div class="tl-item">
+    <div class="tl-date">May<br>2024</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">IEEE MOST 2024</div>
+      <div class="tl-caption">Yunge Presenting</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/MOST2024-Talk.jpg">
+          <img src="/images/gallery/MOST2024-Talk.jpg" alt="IEEE MOST 2024 presentation">
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ── 2023 · Lab Gathering ──────────────────────────── -->
   <div class="tl-item">
     <div class="tl-date">Nov<br>2023</div>
