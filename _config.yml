@@ -22,7 +22,7 @@ baidu_site_verification  :
 # Site Author
 author:
   name             : "Lanyu (Lori) Xu"
-  avatar           : "images/headshot-LX-2025.jpg"
+  avatar           : "/images/headshot-LX-2025.jpg"
   # bio              : "Assistant Professor · Oakland University"
   bio              : "许蓝予"
   location         : "Rochester, MI"
