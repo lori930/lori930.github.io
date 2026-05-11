@@ -102,6 +102,21 @@ author_profile: true
       </div>
     </div>
   </div>
+    <!-- ── 2025 · IGVC Competition ───────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Jun<br>2025</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">CVPR 2025 — T4V Workshop </div>
+      <div class="tl-caption">@ Nashville TN </div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/CVPRW2025-poster.jpg">
+          <img src="/images/gallery/CVPRW2025-poster.jpg" alt="CVPR 2025">
+        </a>
+      </div>
+    </div>
+  </div>
+
 
   <!-- ── 2025 · IGVC Competition ───────────────────────── -->
   <div class="tl-item">
