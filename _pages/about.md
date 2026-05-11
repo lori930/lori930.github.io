@@ -19,7 +19,7 @@ redirect_from:
 
 I design, analyze, and build efficient edge AI systems — bringing intelligent perception closer to where data is generated, on resource-constrained hardware. My research focuses on vision transformer efficiency and edge-optimized inference, with applications in autonomous driving, medical imaging, and AI-powered fitness and sports analysis.
 
-I am an Assistant Professor of Computer Science at [Oakland University](https://www.oakland.edu) and the Director of Edge Intelligent Systems (EIS) Lab. I received my Ph.D. in Computer Science from [Wayne State University](https://wayne.edu), where I was advised by [Dr. Weisong Shi](https://www.weisongshi.org/), and my B.S. in Computer Science from [Tongji University](https://www.tongji.edu.cn/).
+I am an Assistant Professor of Computer Science & Engineering at [Oakland University](https://www.oakland.edu) and the Director of Edge Intelligent Systems (EIS) Lab. I received my Ph.D. in Computer Science from [Wayne State University](https://wayne.edu), where I was advised by [Dr. Weisong Shi](https://www.weisongshi.org/), and my B.S. in Computer Science from [Tongji University](https://www.tongji.edu.cn/).
 
 <!-- I am the co-author of the textbook [*Edge Computing: Systems and Applications*](https://edgecomputingbook.org) (Wiley, 2025). -->
 
