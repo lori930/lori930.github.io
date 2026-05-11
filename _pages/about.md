@@ -32,8 +32,8 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 - Yunge Li (Winter 2023–)
 - Fan Li (Winter 2023–)
 
-**Master's Students**
-- Lucas Alves (Fall 2024–)
+**Graduated Master**
+- Lucas Alves (Fall 2024 – Winter 2026)
 
 
 # 🔥 News
