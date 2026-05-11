@@ -37,16 +37,16 @@ author_profile: true
       </div>
     </div>
   </div>
+
   <div class="tl-item">
     <div class="tl-date"></div>
     <div class="tl-dot"></div>
     <div class="tl-body">
-    <div class="tl-caption">The MIST/CARLAB Family Gathering</div>
-        <div class="tl-photos single popup-group">
-          <a href="/images/gallery/MOST2026-Gathering.jpg">
-            <img src="/images/gallery/MOST2026-Gathering.jpg" alt="IEEE MOST 2026 presentation">
-          </a>
-        </div>
+      <div class="tl-caption">The MIST/CARLAB Family Gathering</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/MOST2026-Gathering.jpg">
+          <img src="/images/gallery/MOST2026-Gathering.jpg" alt="MOST 2026 Gathering">
+        </a>
       </div>
     </div>
   </div>
