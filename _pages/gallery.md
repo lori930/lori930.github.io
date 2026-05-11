@@ -23,7 +23,21 @@ author_profile: true
        5. Upload the image(s) to images/gallery/.
        ═══════════════════════════════════════════════════════ -->
 
-
+  <!-- ── 2026 · Conference Presentation ───────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">2026</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">IEEE MOST 2026</div>
+      <div class="tl-caption">Lanyu Presenting</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/MOST2026-Talk.jpg">
+          <img src="/images/gallery/MOST2026-Talk.jpg" alt="IEEE MOST 2026 presentation">
+        </a>
+      </div>
+    </div>
+  </div>
+  
   <!-- ── 2025 · IGVC Competition ───────────────────────── -->
   <div class="tl-item">
     <div class="tl-date">Jun<br>2025</div>
@@ -60,20 +74,7 @@ author_profile: true
     </div>
   </div>
 
-  <!-- ── 2024 · Conference Presentation ───────────────── -->
-  <div class="tl-item">
-    <div class="tl-date">2024</div>
-    <div class="tl-dot"></div>
-    <div class="tl-body">
-      <div class="tl-title">IEEE MOST 2024</div>
-      <div class="tl-caption">Yunge presenting</div>
-      <div class="tl-photos single popup-group">
-        <a href="/images/gallery/most-2024.jpg">
-          <img src="/images/gallery/most-2024.jpg" alt="IEEE MOST 2024 presentation">
-        </a>
-      </div>
-    </div>
-  </div>
+
 
   <!-- ── ADD MORE EVENTS ABOVE THIS LINE ───────────────── -->
 
