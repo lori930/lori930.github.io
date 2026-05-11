@@ -25,7 +25,7 @@ author_profile: true
 
   <!-- ── 2026 · Conference Presentation ───────────────── -->
   <div class="tl-item">
-    <div class="tl-date">2026</div>
+    <div class="tl-date">May<br>2026</div>
     <div class="tl-dot"></div>
     <div class="tl-body">
       <div class="tl-title">IEEE MOST 2026</div>
@@ -36,8 +36,51 @@ author_profile: true
         </a>
       </div>
     </div>
+    <div class="tl-caption">The MIST/CARLAB Family Gathering</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/MOST2026-Gathering.jpg">
+          <img src="/images/gallery/MOST2026-Gathering.jpg" alt="IEEE MOST 2026 presentation">
+        </a>
+      </div>
+    </div>
   </div>
-  
+
+  <!-- ── 2026 · Lab Gathering ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Apr<br>2026</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">Lab Gathering</div>
+      <div class="tl-caption">A Little Celebration</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/EIS2026-April.jpg">
+          <img src="/images/gallery/EIS2026-April.jpg" alt="Lab gathering 2025">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 2025 · Lab Gathering ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Nov<br>2025</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">Lab Gathering</div>
+      <div class="tl-caption">Thanksgiving Dinner</div>
+      <div class="tl-photos multi popup-group">
+        <a href="/images/gallery/EIS2025-Thanksgiving.jpg">
+          <img src="/images/gallery/EIS2025-Thanksgiving.jpg" alt="Lab gathering 2025">
+        </a>
+        <a href="/images/gallery/gathering-2025-2.jpg">
+          <img src="/images/gallery/gathering-2025-2.jpg" alt="Lab gathering 2025">
+        </a>
+        <a href="/images/gallery/gathering-2025-3.jpg">
+          <img src="/images/gallery/gathering-2025-3.jpg" alt="Lab gathering 2025">
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ── 2025 · IGVC Competition ───────────────────────── -->
   <div class="tl-item">
     <div class="tl-date">Jun<br>2025</div>
@@ -53,26 +96,7 @@ author_profile: true
     </div>
   </div>
 
-  <!-- ── 2025 · Lab Gathering ──────────────────────────── -->
-  <div class="tl-item">
-    <div class="tl-date">2025</div>
-    <div class="tl-dot"></div>
-    <div class="tl-body">
-      <div class="tl-title">Lab Gathering</div>
-      <div class="tl-caption">EIS Lab dinner</div>
-      <div class="tl-photos multi popup-group">
-        <a href="/images/gallery/gathering-2025-1.jpg">
-          <img src="/images/gallery/gathering-2025-1.jpg" alt="Lab gathering 2025">
-        </a>
-        <a href="/images/gallery/gathering-2025-2.jpg">
-          <img src="/images/gallery/gathering-2025-2.jpg" alt="Lab gathering 2025">
-        </a>
-        <a href="/images/gallery/gathering-2025-3.jpg">
-          <img src="/images/gallery/gathering-2025-3.jpg" alt="Lab gathering 2025">
-        </a>
-      </div>
-    </div>
-  </div>
+
 
 
 
