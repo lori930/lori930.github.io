@@ -120,7 +120,7 @@ author_profile: true
 
   <!-- ── 2025 · IGVC Competition ───────────────────────── -->
   <div class="tl-item">
-    <div class="tl-date">Jun<br>2025</div>
+    <div class="tl-date"></div>
     <div class="tl-dot"></div>
     <div class="tl-body">
       <div class="tl-title">IGVC 2025 — Self-Drive Challenge</div>
