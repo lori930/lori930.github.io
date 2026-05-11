@@ -35,6 +35,8 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 **Graduated Master**
 - Lucas Alves (Fall 2024 – Winter 2026)
 
+<p style="margin-top:1rem; font-size:12.5px; color:#aaa;">📷 <a href="/gallery/" style="color:#bbb;">Lab memories</a></p>
+
 
 # 🔥 News
 
@@ -139,7 +141,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 
 # 📖 Educations
 
-- *2015 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/)), M.S. in Computer Science awarded in 2020.
+- *2015 – 2021*, Ph.D. in Computer Science, [Wayne State University](https://wayne.edu) (Advisor: [Dr. Weisong Shi](https://www.weisongshi.org/)), with M.S. in Computer Science (2020).
 - *2011 – 2015*, B.S. in Computer Science, [Tongji University](https://www.tongji.edu.cn/)
 
 
@@ -151,7 +153,7 @@ The Edge Intelligent Systems (EIS) Lab investigates how intelligent systems can 
 | CSI 3680 | Script Programming | Fall 23–25 |
 | CSI 4380 | Game Programming | Winter 22–25 |
 | CSI 4110 / 5110 | Foundations of Edge AI | Fall 24, Fall 25, Winter 26 |
-| CSI 5610 | Advanced Data Structures & Algorithms | Winter 25, Summer 26 |
+| CSI 5610 | Advanced Data Structures & Algorithms | Winter 25 |
 
 
 
