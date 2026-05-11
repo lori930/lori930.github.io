@@ -51,6 +51,21 @@ author_profile: true
     </div>
   </div>
 
+  <!-- ── 2026 · ICLR Poster ──────────────────────────── -->
+  <div class="tl-item">
+    <div class="tl-date">Apr<br>2026</div>
+    <div class="tl-dot"></div>
+    <div class="tl-body">
+      <div class="tl-title">ICLR Conference</div>
+      <div class="tl-caption">@ Rio de Janeiro, Brazil</div>
+      <div class="tl-photos single popup-group">
+        <a href="/images/gallery/ICLR2026-poster.jpg">
+          <img src="/images/gallery/ICLR2026-poster.jpg" alt="ICLR 2026">
+        </a>
+      </div>
+    </div>
+  </div>
+
   <!-- ── 2026 · Lab Gathering ──────────────────────────── -->
   <div class="tl-item">
     <div class="tl-date">Apr<br>2026</div>
@@ -60,7 +75,7 @@ author_profile: true
       <div class="tl-caption">A Little Celebration</div>
       <div class="tl-photos single popup-group">
         <a href="/images/gallery/EIS2026-April.jpg">
-          <img src="/images/gallery/EIS2026-April.jpg" alt="Lab gathering 2025">
+          <img src="/images/gallery/EIS2026-April.jpg" alt="Lab gathering 2026">
         </a>
       </div>
     </div>
