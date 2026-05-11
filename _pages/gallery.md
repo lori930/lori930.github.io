@@ -32,8 +32,8 @@ author_profile: true
       <div class="tl-title">IGVC 2025 — Self-Drive Challenge</div>
       <div class="tl-caption">3rd place · Yunge &amp; Shaibal</div>
       <div class="tl-photos single popup-group">
-        <a href="/images/gallery/igvc-2025.jpg">
-          <img src="/images/gallery/igvc-2025.jpg" alt="IGVC 2025 team photo">
+        <a href="/images/gallery/IGVC2025-car.jpg">
+          <img src="/images/gallery/IGVC2025-car.jpg" alt="IGVC 2025 team photo">
         </a>
       </div>
     </div>
