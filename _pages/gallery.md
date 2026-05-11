@@ -68,7 +68,7 @@ author_profile: true
 
   <!-- ── 2026 · Lab Gathering ──────────────────────────── -->
   <div class="tl-item">
-    <div class="tl-date">Apr<br>2026</div>
+    <div class="tl-date"></div>
     <div class="tl-dot"></div>
     <div class="tl-body">
       <div class="tl-title">Lab Gathering</div>
