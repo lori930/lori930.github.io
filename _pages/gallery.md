@@ -73,16 +73,17 @@ author_profile: true
     <div class="tl-body">
       <div class="tl-title">Lab Gathering</div>
       <div class="tl-caption">Thanksgiving Dinner</div>
-      <div class="tl-photos multi popup-group">
+      <!-- <div class="tl-photos multi popup-group"> -->
+      <div class="tl-photos single popup-group">
         <a href="/images/gallery/EIS2025-Thanksgiving.jpg">
           <img src="/images/gallery/EIS2025-Thanksgiving.jpg" alt="Lab gathering 2025">
         </a>
-        <a href="/images/gallery/gathering-2025-2.jpg">
+        <!-- <a href="/images/gallery/gathering-2025-2.jpg">
           <img src="/images/gallery/gathering-2025-2.jpg" alt="Lab gathering 2025">
         </a>
         <a href="/images/gallery/gathering-2025-3.jpg">
           <img src="/images/gallery/gathering-2025-3.jpg" alt="Lab gathering 2025">
-        </a>
+        </a> -->
       </div>
     </div>
   </div>
@@ -93,10 +94,10 @@ author_profile: true
     <div class="tl-dot"></div>
     <div class="tl-body">
       <div class="tl-title">IGVC 2025 — Self-Drive Challenge</div>
-      <div class="tl-caption">3rd place · Yunge &amp; Shaibal</div>
+      <div class="tl-caption">3rd place · OU CSE &amp; ECE </div>
       <div class="tl-photos single popup-group">
-        <a href="/images/gallery/IGVC2025-car.jpg">
-          <img src="/images/gallery/IGVC2025-car.jpg" alt="IGVC 2025 team photo">
+        <a href="/images/gallery/IGVC2025-award.jpg">
+          <img src="/images/gallery/IGVC2025-award.jpg" alt="IGVC 2025 team photo">
         </a>
       </div>
     </div>
